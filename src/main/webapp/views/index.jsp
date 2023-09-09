@@ -274,25 +274,25 @@
                 <li class="menu-item">
                     <a href="app-email.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="Email">Email</div>
+                        <div data-i18n="Email">권현진</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="app-chat.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
-                        <div data-i18n="Chat">Chat</div>
+                        <div data-i18n="Chat">박효선</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="app-calendar.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
-                        <div data-i18n="Calendar">Calendar</div>
+                        <div data-i18n="Calendar">오지예</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="app-kanban.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
-                        <div data-i18n="Kanban">Kanban</div>
+                        <div data-i18n="Kanban">서민철</div>
                     </a>
                 </li>
                 <!-- e-commerce-app menu start -->
