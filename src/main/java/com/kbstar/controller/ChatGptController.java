@@ -34,7 +34,7 @@ public class ChatGptController {
         try {
             imageUrls = chatGptService.makeImages(commentRequest);
         } catch (Exception e) {
-            // 예외 처리를 진행하고 필요한 경우 메시지를 가져옵니다.
+            // 예외 처리를 진행하고 필요한 경우 메시지를 가져옴
             code = CustomResponseCode.CD_ERROR.getMessage();
         }
         return CustomAPIResponse.getResponseEntity(locale, code, imageUrls);
