@@ -204,7 +204,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                         <%--'Authorization': `Bearer ${apiKey}`--%>
-                        'Authorization': `Bearer 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`
+                        'Authorization': `Bearer ${chatgptapikey}`
                     },
                     body: JSON.stringify({
                         model: "gpt-3.5-turbo",  // 사용할 AI 모델
@@ -271,7 +271,7 @@
                 if (finalmessage.length === 0) return;
                 // 사용자 메시지 화면에 추가
                 //addMessage('나', finalmessage);
-                userInput.value = '';
+                //userInput.value = '';
                 //ChatGPT API 요청후 답변을 화면에 추가
                 const aiResponse = await fetchAIResponse(finalmessage);
                 console.log("챗봇답변 : " + aiResponse);
