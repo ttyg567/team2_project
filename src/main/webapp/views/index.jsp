@@ -287,7 +287,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="app-chat.html" class="menu-link">
+                    <a href="/letter" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
                         <div data-i18n="박효선">박효선</div>
                     </a>

@@ -1,6 +1,7 @@
 package com.kbstar.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,4 +21,9 @@ public class MainController {
         return "gptmakeimage";
     }
 
+    @RequestMapping("/letter")
+    public String letter(Model model){
+        model.addAttribute("center","letter");
+        return "index";
+    }
 }
