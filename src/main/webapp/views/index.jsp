@@ -275,9 +275,15 @@
                     <span class="menu-header-text">Apps &amp; Pages</span>
                 </li>
                 <li class="menu-item">
+                    <a href="/gptmakeimage" class="menu-link">
+                        <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+                        <div data-i18n="권현진(이미지생성)"></div>
+                    </a>
+                </li>
+                <li class="menu-item">
                     <a href="app-email.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진">권현진</div>
+                        <div data-i18n="권현진(계약서작성)"></div>
                     </a>
                 </li>
                 <li class="menu-item">

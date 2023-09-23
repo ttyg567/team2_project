@@ -14,4 +14,10 @@ public class MainController {
         return "index";
     }
 
+
+    @RequestMapping("/gptmakeimage")
+    public String gptMakeImage(Model model){
+        return "gptmakeimage";
+    }
+
 }
