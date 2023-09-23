@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-
 <!DOCTYPE html>
 
 <html
@@ -11,59 +7,52 @@
         class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
         dir="ltr"
         data-theme="theme-default"
-        data-assets-path="/"
+        data-assets-path="../../assets/"
         data-template="vertical-menu-template-no-customizer">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta
             name="viewport"
-            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Materialize - Material Design HTML Admin Template</title>
+    <title>Input groups - Forms | Materialize - Material Design HTML Admin Template</title>
 
-    <meta name="description" content=""/>
-
-    <%--jquery--%>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/img/favicon/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
-            rel="stylesheet"/>
+            rel="stylesheet" />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="/vendor/fonts/materialdesignicons.css"/>
-    <link rel="stylesheet" href="/vendor/fonts/fontawesome.css"/>
-    <link rel="stylesheet" href="/vendor/fonts/flag-icons.css"/>
+    <link rel="stylesheet" href="../../assets/vendor/fonts/materialdesignicons.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
 
     <!-- Menu waves for no-customizer fix -->
-    <link rel="stylesheet" href="/vendor/libs/node-waves/node-waves.css"/>
+    <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="/vendor/css/rtl/core.css"/>
-    <link rel="stylesheet" href="/vendor/css/rtl/theme-default.css"/>
-    <link rel="stylesheet" href="/css/demo.css"/>
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" />
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"/>
-    <link rel="stylesheet" href="/vendor/libs/typeahead-js/typeahead.css"/>
-    <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css"/>
-    <link rel="stylesheet" href="/vendor/libs/swiper/swiper.css"/>
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
-    <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
 
     <!-- Helpers -->
-    <script src="/vendor/js/helpers.js"></script>
+    <script src="../../assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="/js/config.js"></script>
+    <script src="../../assets/js/config.js"></script>
 </head>
 
 <body>
@@ -80,24 +69,24 @@
                   <svg width="268" height="150" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                             d="M30.0944 2.22569C29.0511 0.444187 26.7508 -0.172113 24.9566 0.849138C23.1623 1.87039 22.5536 4.14247 23.5969 5.92397L30.5368 17.7743C31.5801 19.5558 33.8804 20.1721 35.6746 19.1509C37.4689 18.1296 38.0776 15.8575 37.0343 14.076L30.0944 2.22569Z"
-                            fill="currentColor"/>
+                            fill="currentColor" />
                     <path
                             d="M30.171 2.22569C29.1277 0.444187 26.8274 -0.172113 25.0332 0.849138C23.2389 1.87039 22.6302 4.14247 23.6735 5.92397L30.6134 17.7743C31.6567 19.5558 33.957 20.1721 35.7512 19.1509C37.5455 18.1296 38.1542 15.8575 37.1109 14.076L30.171 2.22569Z"
                             fill="url(#paint0_linear_2989_100980)"
-                            fill-opacity="0.4"/>
+                            fill-opacity="0.4" />
                     <path
                             d="M22.9676 2.22569C24.0109 0.444187 26.3112 -0.172113 28.1054 0.849138C29.8996 1.87039 30.5084 4.14247 29.4651 5.92397L22.5251 17.7743C21.4818 19.5558 19.1816 20.1721 17.3873 19.1509C15.5931 18.1296 14.9843 15.8575 16.0276 14.076L22.9676 2.22569Z"
-                            fill="currentColor"/>
+                            fill="currentColor" />
                     <path
                             d="M14.9558 2.22569C13.9125 0.444187 11.6122 -0.172113 9.818 0.849138C8.02377 1.87039 7.41502 4.14247 8.45833 5.92397L15.3983 17.7743C16.4416 19.5558 18.7418 20.1721 20.5361 19.1509C22.3303 18.1296 22.9391 15.8575 21.8958 14.076L14.9558 2.22569Z"
-                            fill="currentColor"/>
+                            fill="currentColor" />
                     <path
                             d="M14.9558 2.22569C13.9125 0.444187 11.6122 -0.172113 9.818 0.849138C8.02377 1.87039 7.41502 4.14247 8.45833 5.92397L15.3983 17.7743C16.4416 19.5558 18.7418 20.1721 20.5361 19.1509C22.3303 18.1296 22.9391 15.8575 21.8958 14.076L14.9558 2.22569Z"
                             fill="url(#paint1_linear_2989_100980)"
-                            fill-opacity="0.4"/>
+                            fill-opacity="0.4" />
                     <path
                             d="M7.82901 2.22569C8.87231 0.444187 11.1726 -0.172113 12.9668 0.849138C14.7611 1.87039 15.3698 4.14247 14.3265 5.92397L7.38656 17.7743C6.34325 19.5558 4.04298 20.1721 2.24875 19.1509C0.454514 18.1296 -0.154233 15.8575 0.88907 14.076L7.82901 2.22569Z"
-                            fill="currentColor"/>
+                            fill="currentColor" />
                     <defs>
                       <linearGradient
                               id="paint0_linear_2989_100980"
@@ -106,8 +95,8 @@
                               x2="10.532"
                               y2="24.104"
                               gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-opacity="1"/>
-                        <stop offset="1" stop-opacity="0"/>
+                        <stop offset="0" stop-opacity="1" />
+                        <stop offset="1" stop-opacity="0" />
                       </linearGradient>
                       <linearGradient
                               id="paint1_linear_2989_100980"
@@ -116,8 +105,8 @@
                               x2="10.3357"
                               y2="24.1155"
                               gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-opacity="1"/>
-                        <stop offset="1" stop-opacity="0"/>
+                        <stop offset="0" stop-opacity="1" />
+                        <stop offset="1" stop-opacity="0" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -131,11 +120,11 @@
                         <path
                                 d="M11.4854 4.88844C11.0081 4.41121 10.2344 4.41121 9.75715 4.88844L4.51028 10.1353C4.03297 10.6126 4.03297 11.3865 4.51028 11.8638L9.75715 17.1107C10.2344 17.5879 11.0081 17.5879 11.4854 17.1107C11.9626 16.6334 11.9626 15.8597 11.4854 15.3824L7.96672 11.8638C7.48942 11.3865 7.48942 10.6126 7.96672 10.1353L11.4854 6.61667C11.9626 6.13943 11.9626 5.36568 11.4854 4.88844Z"
                                 fill="currentColor"
-                                fill-opacity="0.6"/>
+                                fill-opacity="0.6" />
                         <path
                                 d="M15.8683 4.88844L10.6214 10.1353C10.1441 10.6126 10.1441 11.3865 10.6214 11.8638L15.8683 17.1107C16.3455 17.5879 17.1192 17.5879 17.5965 17.1107C18.0737 16.6334 18.0737 15.8597 17.5965 15.3824L14.0778 11.8638C13.6005 11.3865 13.6005 10.6126 14.0778 10.1353L17.5965 6.61667C18.0737 6.13943 18.0737 5.36568 17.5965 4.88844C17.1192 4.41121 16.3455 4.41121 15.8683 4.88844Z"
                                 fill="currentColor"
-                                fill-opacity="0.38"/>
+                                fill-opacity="0.38" />
                     </svg>
                 </a>
             </div>
@@ -144,7 +133,7 @@
 
             <ul class="menu-inner py-1">
                 <!-- Dashboards -->
-                <li class="menu-item active open">
+                <li class="menu-item">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
                         <div data-i18n="Dashboards">Dashboards</div>
@@ -161,7 +150,7 @@
                                 <div data-i18n="CRM">CRM</div>
                             </a>
                         </li>
-                        <li class="menu-item active">
+                        <li class="menu-item">
                             <a href="index.html" class="menu-link">
                                 <div data-i18n="Analytics">Analytics</div>
                             </a>
@@ -277,25 +266,25 @@
                 <li class="menu-item">
                     <a href="app-email.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진">권현진</div>
+                        <div data-i18n="Email">Email</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="app-chat.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
-                        <div data-i18n="박효선">박효선</div>
+                        <div data-i18n="Chat">Chat</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="app-calendar.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
-                        <div data-i18n="오지예">오지예</div>
+                        <div data-i18n="Calendar">Calendar</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="/smc/" class="menu-link">
+                    <a href="app-kanban.html" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
-                        <div data-i18n="서민철">서민철</div>
+                        <div data-i18n="Kanban">Kanban</div>
                     </a>
                 </li>
                 <!-- e-commerce-app menu start -->
@@ -380,8 +369,7 @@
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="app-ecommerce-customer-details-notifications.html"
-                                               class="menu-link">
+                                            <a href="app-ecommerce-customer-details-notifications.html" class="menu-link">
                                                 <div data-i18n="Notifications">Notifications</div>
                                             </a>
                                         </li>
@@ -1073,7 +1061,7 @@
                     <span class="menu-header-text">Forms &amp; Tables</span>
                 </li>
                 <!-- Forms -->
-                <li class="menu-item">
+                <li class="menu-item active open">
                     <a href="javascript:void(0);" class="menu-link menu-toggle">
                         <i class="menu-icon tf-icons mdi mdi-form-select"></i>
                         <div data-i18n="Form Elements">Form Elements</div>
@@ -1084,7 +1072,7 @@
                                 <div data-i18n="Basic Inputs">Basic Inputs</div>
                             </a>
                         </li>
-                        <li class="menu-item">
+                        <li class="menu-item active">
                             <a href="forms-input-groups.html" class="menu-link">
                                 <div data-i18n="Input groups">Input groups</div>
                             </a>
@@ -1389,8 +1377,7 @@
                           <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
                             <i class="mdi mdi-cog-outline fs-4"></i>
                           </span>
-                                            <a href="pages-account-settings-account.html"
-                                               class="stretched-link">Setting</a>
+                                            <a href="pages-account-settings-account.html" class="stretched-link">Setting</a>
                                             <small class="text-muted mb-0">Account Settings</small>
                                         </div>
                                     </div>
@@ -1440,14 +1427,12 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/1.png" alt
-                                                             class="w-px-40 h-auto rounded-circle"/>
+                                                        <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">Congratulation Lettie 🎉</h6>
-                                                    <small class="text-truncate text-body">Won the monthly best seller
-                                                        gold badge</small>
+                                                    <small class="text-truncate text-body">Won the monthly best seller gold badge</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">1h ago</small>
@@ -1463,8 +1448,7 @@
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">Charles Franklin</h6>
-                                                    <small class="text-truncate text-body">Accepted your
-                                                        connection</small>
+                                                    <small class="text-truncate text-body">Accepted your connection</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">12hr ago</small>
@@ -1475,14 +1459,12 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/2.png" alt
-                                                             class="w-px-40 h-auto rounded-circle"/>
+                                                        <img src="../../assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">New Message ✉️</h6>
-                                                    <small class="text-truncate text-body">You have new message from
-                                                        Natalie</small>
+                                                    <small class="text-truncate text-body">You have new message from Natalie</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">1h ago</small>
@@ -1500,8 +1482,7 @@
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">Whoo! You have new order 🛒</h6>
-                                                    <small class="text-truncate text-body">ACME Inc. made new order
-                                                        $1,154</small>
+                                                    <small class="text-truncate text-body">ACME Inc. made new order $1,154</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">1 day ago</small>
@@ -1512,8 +1493,7 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/9.png" alt
-                                                             class="w-px-40 h-auto rounded-circle"/>
+                                                        <img src="../../assets/img/avatars/9.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
@@ -1538,8 +1518,7 @@
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">Monthly report is generated</h6>
-                                                    <small class="text-truncate text-body">July monthly financial report
-                                                        is generated </small>
+                                                    <small class="text-truncate text-body">July monthly financial report is generated </small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">3 days ago</small>
@@ -1550,14 +1529,12 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/5.png" alt
-                                                             class="w-px-40 h-auto rounded-circle"/>
+                                                        <img src="../../assets/img/avatars/5.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">Send connection request</h6>
-                                                    <small class="text-truncate text-body">Peter sent you connection
-                                                        request</small>
+                                                    <small class="text-truncate text-body">Peter sent you connection request</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">4 days ago</small>
@@ -1568,14 +1545,12 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/6.png" alt
-                                                             class="w-px-40 h-auto rounded-circle"/>
+                                                        <img src="../../assets/img/avatars/6.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-column flex-grow-1 overflow-hidden w-px-200">
                                                     <h6 class="mb-1 text-truncate">New message from Jane</h6>
-                                                    <small class="text-truncate text-body">Your have new message from
-                                                        Jane</small>
+                                                    <small class="text-truncate text-body">Your have new message from Jane</small>
                                                 </div>
                                                 <div class="flex-shrink-0 dropdown-notifications-actions">
                                                     <small class="text-muted">5 days ago</small>
@@ -1615,10 +1590,9 @@
 
                         <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                               data-bs-toggle="dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle"/>
+                                    <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -1627,8 +1601,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="/img/avatars/1.png" alt
-                                                         class="w-px-40 h-auto rounded-circle"/>
+                                                    <img src="../../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
@@ -1698,22 +1671,824 @@
                             type="text"
                             class="form-control search-input container-xxl border-0"
                             placeholder="Search..."
-                            aria-label="Search..."/>
+                            aria-label="Search..." />
                     <i class="mdi mdi-close search-toggler cursor-pointer"></i>
                 </div>
             </nav>
 
             <!-- / Navbar -->
 
-            <!-- center.jsp -->
-            <c:choose>
-                <c:when test="${center == null}">
-                    <jsp:include page="center.jsp"/>
-                </c:when>
-                <c:otherwise>
-                    <jsp:include page="${center}.jsp"/>
-                </c:otherwise>
-            </c:choose>
+            <!-- Content wrapper -->
+            <div class="content-wrapper">
+                <!-- Content -->
+
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Input groups</h4>
+
+                    <div class="row">
+                        <!-- Floating (Outline) -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Floating (Outline)</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="form-floating form-floating-outline">
+                                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                            <option>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <label for="floatingSelect">Works with selects</label>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">@</span>
+                                        <div class="form-floating form-floating-outline">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="basic-addon11"
+                                                    placeholder="John Doe"
+                                                    aria-label="Username"
+                                                    aria-describedby="basic-addon11" />
+                                            <label for="basic-addon11">Username</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-password-toggle">
+                                        <div class="input-group input-group-merge">
+                                            <div class="form-floating form-floating-outline">
+                                                <input
+                                                        type="password"
+                                                        class="form-control"
+                                                        id="basic-default-password12"
+                                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                        aria-describedby="basic-default-password12" />
+                                                <label for="basic-default-password12">Password</label>
+                                            </div>
+                                            <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <div class="form-floating form-floating-outline">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="basic-addon13"
+                                                    placeholder="john.doe"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="basic-addon13" />
+                                            <label for="basic-addon13">Recipient's username</label>
+                                        </div>
+                                        <span class="input-group-text">@example.com</span>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">https://example.com/users/</span>
+                                        <div class="form-floating form-floating-outline">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="id"
+                                                    id="basic-url14"
+                                                    aria-describedby="basic-url14" />
+                                            <label for="basic-url14">URL</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">$</span>
+                                        <div class="form-floating form-floating-outline">
+                                            <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    placeholder="499"
+                                                    aria-label="Amount (to the nearest dollar)" />
+                                            <label>Amount</label>
+                                        </div>
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">With textarea</span>
+                                        <div class="form-floating form-floating-outline">
+                          <textarea
+                                  class="form-control h-px-75"
+                                  aria-label="With textarea"
+                                  placeholder="Lorem ipsum"></textarea>
+                                            <label>Comment</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating (Filled) -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Floating (Filled)</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="form-floating">
+                                        <select
+                                                class="form-select"
+                                                id="floatingSelectFilled"
+                                                aria-label="Floating label select example">
+                                            <option>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                        <label for="floatingSelectFilled">Works with selects</label>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+
+                                    <div class="input-group input-group-floating">
+                                        <span class="input-group-text">@</span>
+                                        <div class="form-floating">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="basic-addon21"
+                                                    placeholder="John Doe"
+                                                    aria-label="Username"
+                                                    aria-describedby="basic-addon21" />
+                                            <label for="basic-addon21">Username</label>
+                                        </div>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+
+                                    <div class="form-password-toggle">
+                                        <div class="input-group input-group-floating">
+                                            <div class="form-floating">
+                                                <input
+                                                        type="password"
+                                                        class="form-control"
+                                                        id="basic-default-password22"
+                                                        placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                        aria-describedby="basic-default-password22" />
+                                                <label for="basic-default-password22">Password</label>
+                                            </div>
+                                            <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
+                                            <span class="form-floating-focused"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group input-group-floating">
+                                        <div class="form-floating">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="basic-addon23"
+                                                    placeholder="john.doe"
+                                                    aria-label="Recipient's username"
+                                                    aria-describedby="basic-addon23" />
+                                            <label for="basic-addon23">Recipient's username</label>
+                                        </div>
+                                        <span class="input-group-text">@example.com</span>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+
+                                    <div class="input-group input-group-floating">
+                                        <span class="input-group-text">https://example.com/users/</span>
+                                        <div class="form-floating">
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="basic-url24"
+                                                    placeholder="id"
+                                                    aria-describedby="basic-url24" />
+                                            <label for="basic-url24">URL</label>
+                                        </div>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+
+                                    <div class="input-group input-group-floating">
+                                        <span class="input-group-text">$</span>
+                                        <div class="form-floating">
+                                            <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    placeholder="499"
+                                                    aria-label="Amount (to the nearest dollar)" />
+                                            <label>Amount</label>
+                                        </div>
+                                        <span class="input-group-text">.00</span>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+
+                                    <div class="input-group input-group-floating">
+                                        <span class="input-group-text">With textarea</span>
+                                        <div class="form-floating">
+                          <textarea
+                                  class="form-control h-px-75"
+                                  aria-label="With textarea"
+                                  placeholder="Lorem ipsum"></textarea>
+                                            <label>Comment</label>
+                                        </div>
+                                        <span class="form-floating-focused"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Merged -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Merged</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text" id="basic-addon-search31"><i class="mdi mdi-magnify"></i></span>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Search..."
+                                                aria-label="Search..."
+                                                aria-describedby="basic-addon-search31" />
+                                    </div>
+
+                                    <div class="form-password-toggle">
+                                        <label class="form-label" for="basic-default-password32">Password</label>
+                                        <div class="input-group input-group-merge">
+                                            <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="basic-default-password32"
+                                                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                    aria-describedby="basic-default-password32" />
+                                            <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Recipient's username"
+                                                aria-label="Recipient's username"
+                                                aria-describedby="basic-addon33" />
+                                        <span class="input-group-text" id="basic-addon33">@example.com</span>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text" id="basic-addon34">https://example.com/users/</span>
+                                        <input type="text" class="form-control" id="basic-url3" aria-describedby="basic-addon34" />
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">$</span>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder="100"
+                                                aria-label="Amount (to the nearest dollar)" />
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">With textarea</span>
+                                        <textarea class="form-control" aria-label="With textarea" style="height: 60px"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Basic -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Basic</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon41">@</span>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Username"
+                                                aria-label="Username"
+                                                aria-describedby="basic-addon41" />
+                                    </div>
+
+                                    <div class="form-password-toggle">
+                                        <label class="form-label" for="basic-default-password42">Password</label>
+                                        <div class="input-group">
+                                            <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="basic-default-password42"
+                                                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                    aria-describedby="basic-default-password42" />
+                                            <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Recipient's username"
+                                                aria-label="Recipient's username"
+                                                aria-describedby="basic-addon43" />
+                                        <span class="input-group-text" id="basic-addon43">@example.com</span>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon44">https://example.com/users/</span>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="URL"
+                                                id="basic-url441"
+                                                aria-describedby="basic-addon44" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder="Amount"
+                                                aria-label="Amount (to the nearest dollar)" />
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">With textarea</span>
+                                        <textarea
+                                                class="form-control"
+                                                aria-label="With textarea"
+                                                placeholder="Comment"
+                                                style="height: 60px"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sizing -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Sizing & Shape</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+
+                                    <div class="input-group input-group-merge input-group-lg">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+
+                                    <div class="input-group input-group-merge input-group-sm">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+                                </div>
+                                <hr class="m-0" />
+                                <div class="card-body">
+                                    <div class="input-group rounded-pill">
+                                        <span class="input-group-text">@</span>
+                                        <input type="text" class="form-control" placeholder="Username" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Checkbox and radio addons -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Checkbox and radio addons</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="input-group">
+                                        <div class="input-group-text form-check mb-0">
+                                            <input
+                                                    class="form-check-input m-auto"
+                                                    type="checkbox"
+                                                    value=""
+                                                    aria-label="Checkbox for following text input" />
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Text input with checkbox" />
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-text form-check mb-0">
+                                            <input
+                                                    class="form-check-input m-auto"
+                                                    type="radio"
+                                                    value=""
+                                                    aria-label="Radio button for following text input" />
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Text input with radio button" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Multiple inputs & addon -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Multiple inputs & addon</h5>
+
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <small class="text-light fw-medium d-block">Multiple inputs</small>
+                                    <div class="input-group">
+                                        <span class="input-group-text">First and last name</span>
+                                        <input type="text" aria-label="First name" class="form-control" />
+                                        <input type="text" aria-label="Last name" class="form-control" />
+                                    </div>
+
+                                    <small class="text-light fw-medium d-block pt-3">Multiple addons</small>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <span class="input-group-text">0.00</span>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                aria-label="Dollar amount (with dot and two decimal places)" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                aria-label="Dollar amount (with dot and two decimal places)" />
+                                        <span class="input-group-text">$</span>
+                                        <span class="input-group-text">0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Speech To Text -->
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Speech To Text</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <small class="text-light fw-medium d-block">Input Group</small>
+
+                                    <div class="input-group input-group-merge speech-to-text">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Say it"
+                                                aria-describedby="text-to-speech-addon" />
+                                        <span class="input-group-text" id="text-to-speech-addon">
+                          <i class="mdi mdi-microphone-outline cursor-pointer text-to-speech-toggle"></i>
+                        </span>
+                                    </div>
+
+                                    <small class="text-light fw-medium d-block pt-3">Textarea</small>
+
+                                    <div class="input-group input-group-merge speech-to-text">
+                                        <textarea class="form-control" placeholder="Say it" rows="2"></textarea>
+                                        <span class="input-group-text">
+                          <i class="mdi mdi-microphone-outline cursor-pointer text-to-speech-toggle"></i>
+                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Button with dropdowns & addons -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <h5 class="card-header">Button with dropdowns & addons</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <small class="text-light fw-medium d-block">Button addons</small>
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-primary" type="button" id="button-addon1">Button</button>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder=""
+                                                aria-label="Example text with button addon"
+                                                aria-describedby="button-addon1" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Recipient's username"
+                                                aria-label="Recipient's username"
+                                                aria-describedby="button-addon2" />
+                                        <button class="btn btn-outline-primary" type="button" id="button-addon2">Button</button>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-primary" type="button">Button</button>
+                                        <button class="btn btn-outline-primary" type="button">Button</button>
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder=""
+                                                aria-label="Example text with two button addons" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Recipient's username"
+                                                aria-label="Recipient's username with two button addons" />
+                                        <button class="btn btn-outline-primary" type="button">Button</button>
+                                        <button class="btn btn-outline-primary" type="button">Button</button>
+                                    </div>
+
+                                    <small class="text-light fw-medium d-block pt-3">Button with dropdowns</small>
+                                    <div class="input-group">
+                                        <button
+                                                class="btn btn-outline-primary dropdown-toggle"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            Dropdown
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                        </ul>
+                                        <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" aria-label="Text input with dropdown button" />
+                                        <button
+                                                class="btn btn-outline-primary dropdown-toggle"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            Dropdown
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <button
+                                                class="btn btn-outline-primary dropdown-toggle"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            Dropdown
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Action before</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Another action before</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                        </ul>
+                                        <input type="text" class="form-control" aria-label="Text input with 2 dropdown buttons" />
+                                        <button
+                                                class="btn btn-outline-primary dropdown-toggle"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                            Dropdown
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider" />
+                                            </li>
+                                            <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <!-- Segmented buttons -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mb-4">
+                                        <h5 class="card-header">Segmented buttons</h5>
+                                        <div class="card-body demo-vertical-spacing demo-only-element">
+                                            <div class="input-group">
+                                                <button type="button" class="btn btn-outline-primary">Action</button>
+                                                <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider" />
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                                </ul>
+                                                <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        aria-label="Text input with segmented dropdown button" />
+                                            </div>
+
+                                            <div class="input-group">
+                                                <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        aria-label="Text input with segmented dropdown button" />
+                                                <button type="button" class="btn btn-outline-primary">Action</button>
+                                                <button
+                                                        type="button"
+                                                        class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-bs-toggle="dropdown"
+                                                        aria-expanded="false">
+                                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-end">
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                                    <li>
+                                                        <hr class="dropdown-divider" />
+                                                    </li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Custom select -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mb-4">
+                                        <h5 class="card-header">Custom select</h5>
+                                        <div class="card-body demo-vertical-spacing demo-only-element">
+                                            <div class="input-group">
+                                                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                                <select class="form-select" id="inputGroupSelect01">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <select class="form-select" id="inputGroupSelect02">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                                <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <button class="btn btn-outline-primary" type="button">Button</button>
+                                                <select
+                                                        class="form-select"
+                                                        id="inputGroupSelect03"
+                                                        aria-label="Example select with button addon">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="input-group">
+                                                <select
+                                                        class="form-select"
+                                                        id="inputGroupSelect04"
+                                                        aria-label="Example select with button addon">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                    <option value="3">Three</option>
+                                                </select>
+                                                <button class="btn btn-outline-primary" type="button">Button</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom file input -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <h5 class="card-header">Custom file input</h5>
+                                <div class="card-body demo-vertical-spacing demo-only-element">
+                                    <div class="input-group">
+                                        <label class="input-group-text" for="inputGroupFile01">Upload</label>
+                                        <input type="file" class="form-control" id="inputGroupFile01" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input type="file" class="form-control" id="inputGroupFile02" />
+                                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon03">Button</button>
+                                        <input
+                                                type="file"
+                                                class="form-control"
+                                                id="inputGroupFile03"
+                                                aria-describedby="inputGroupFileAddon03"
+                                                aria-label="Upload" />
+                                    </div>
+
+                                    <div class="input-group">
+                                        <input
+                                                type="file"
+                                                class="form-control"
+                                                id="inputGroupFile04"
+                                                aria-describedby="inputGroupFileAddon04"
+                                                aria-label="Upload" />
+                                        <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04">Button</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Content -->
+
+                <!-- Footer -->
+                <footer class="content-footer footer bg-footer-theme">
+                    <div class="container-xxl">
+                        <div
+                                class="footer-container d-flex align-items-center justify-content-between py-3 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                , made with <span class="text-danger"><i class="tf-icons mdi mdi-heart"></i></span> by
+                                <a href="https://pixinvent.com" target="_blank" class="footer-link fw-medium">Pixinvent</a>
+                            </div>
+                            <div class="d-none d-lg-inline-block">
+                                <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
+                                >License</a
+                                >
+                                <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
+                                >More Themes</a
+                                >
+
+                                <a
+                                        href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/"
+                                        target="_blank"
+                                        class="footer-link me-4"
+                                >Documentation</a
+                                >
+
+                                <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                                >Support</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- / Footer -->
+
+                <div class="content-backdrop fade"></div>
+            </div>
+            <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
     </div>
@@ -1728,27 +2503,24 @@
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
-<script src="/vendor/libs/jquery/jquery.js"></script>
-<script src="/vendor/libs/popper/popper.js"></script>
-<script src="/vendor/js/bootstrap.js"></script>
-<script src="/vendor/libs/node-waves/node-waves.js"></script>
-<script src="/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-<script src="/vendor/libs/hammer/hammer.js"></script>
-<script src="/vendor/libs/i18n/i18n.js"></script>
-<script src="/vendor/libs/typeahead-js/typeahead.js"></script>
-<script src="/vendor/js/menu.js"></script>
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../../assets/vendor/libs/popper/popper.js"></script>
+<script src="../../assets/vendor/js/bootstrap.js"></script>
+<script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
+<script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+<script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+<script src="../../assets/vendor/libs/typeahead-js/typeahead.js"></script>
+<script src="../../assets/vendor/js/menu.js"></script>
 
 <!-- endbuild -->
 
 <!-- Vendors JS -->
-<script src="/vendor/libs/apex-charts/apexcharts.js"></script>
-<script src="/vendor/libs/swiper/swiper.js"></script>
 
 <!-- Main JS -->
-<script src="/js/main.js"></script>
+<script src="../../assets/js/main.js"></script>
 
 <!-- Page JS -->
-<script src="/js/dashboards-analytics.js"></script>
-
 </body>
 </html>
+
