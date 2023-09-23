@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SmcController {
     String dir = "smc/";
 
-    @Value("${chatgptapikey}")
+    @Value("${chatgpt.api-key}")
     String chatgptapikey;
 
     @RequestMapping("/")
