@@ -54,10 +54,21 @@
     <link rel="stylesheet" href="/vendor/libs/typeahead-js/typeahead.css"/>
     <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css"/>
     <link rel="stylesheet" href="/vendor/libs/swiper/swiper.css"/>
+    <link rel="stylesheet" href="/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+    <link rel="stylesheet" href="/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+    <link rel="stylesheet" href="/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+    <link rel="stylesheet" href="/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+    <link rel="stylesheet" href="/vendor/libs/fullcalendar/fullcalendar.css" />
+    <link rel="stylesheet" href="/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="/vendor/libs/quill/editor.css" />
+    <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
+
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
+    <link rel="stylesheet" href="/vendor/css/pages/app-calendar.css" />
 
     <!-- Helpers -->
     <script src="/vendor/js/helpers.js"></script>
@@ -1714,7 +1725,7 @@
             <!-- center.jsp -->
             <c:choose>
                 <c:when test="${center == null}">
-                    <jsp:include page="center.jsp"/>
+                    <jsp:include page="center2.jsp"/>
                 </c:when>
                 <c:otherwise>
                     <jsp:include page="${center}.jsp"/>
@@ -1743,6 +1754,7 @@
 <script src="/vendor/libs/i18n/i18n.js"></script>
 <script src="/vendor/libs/typeahead-js/typeahead.js"></script>
 <script src="/vendor/js/menu.js"></script>
+
 
 <!-- endbuild -->
 
