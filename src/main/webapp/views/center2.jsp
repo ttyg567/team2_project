@@ -23,8 +23,8 @@
                                     </div>
                                 </div>
                                 <div class="content-right">
-                                    <p class="mb-0 fw-medium">Hours Spent</p>
-                                    <span class="text-primary mb-0 display-6">34h</span>
+                                    <p class="mb-0 fw-medium">작성 중인 문서</p>
+                                    <span class="text-primary mb-0 display-6">9 개</span>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-3">
@@ -34,8 +34,8 @@
                                     </div>
                                 </div>
                                 <div class="content-right">
-                                    <p class="mb-0 fw-medium">Test Results</p>
-                                    <span class="text-info mb-0 display-6">82%</span>
+                                    <p class="mb-0 fw-medium">미발송 문서</p>
+                                    <span class="text-info mb-0 display-6">7 개</span>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-3">
@@ -45,14 +45,14 @@
                                     </div>
                                 </div>
                                 <div class="content-right">
-                                    <p class="mb-0 fw-medium">Course Completed</p>
-                                    <span class="text-warning mb-0 display-6">14</span>
+                                    <p class="mb-0 fw-medium">결재 대기 문서</p>
+                                    <span class="text-warning mb-0 display-6">2 개</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-4 ps-md-3 ps-lg-5 pt-3 pt-md-0">
+                    <%--<div class="col-12 col-md-4 ps-md-3 ps-lg-5 pt-3 pt-md-0">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <div>
@@ -66,7 +66,7 @@
                             </div>
                             <div id="leadsReportChart"></div>
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
             </div>
             <!-- 상단, 이번주 현황  -->
@@ -103,16 +103,13 @@
                                     <span class="timeline-point timeline-point-primary"></span>
                                     <div class="timeline-event">
                                         <div class="timeline-header mb-1">
-                                            <h6 class="mb-2">Create youtube video for next product 😎</h6>
-                                            <small class="text-muted">Tomorrow</small>
+                                            <h6 class="mb-2">000 문서 제출 기한</h6>
+                                            <small class="text-muted">11월 17일 18:00</small>
                                         </div>
-                                        <p class="mb-2">Product introduction and details video</p>
+                                        <p class="mb-2">제출 기한이 하루 남았습니다.</p>
                                         <div class="d-flex">
                                             <a href="https://www.youtube.com/@pixinvent1515" target="_blank" class="text-truncate">
-                                <span class="badge badge-center rounded-pill bg-danger w-px-20 h-px-20 me-2">
-                                  <i class="mdi mdi-play text-white"></i>
-                                </span>
-                                                <span class="fw-medium">https://www.youtube.com/@pixinvent1515</span>
+                                                <span class="fw-medium">문서 작성함으로 이동</span>
                                             </a>
                                         </div>
                                     </div>
@@ -121,28 +118,28 @@
                                     <span class="timeline-point timeline-point-info"></span>
                                     <div class="timeline-event">
                                         <div class="timeline-header mb-1">
-                                            <h6 class="mb-2">Received payment from usa client 😍</h6>
-                                            <small class="text-muted">January, 18</small>
+                                            <h6 class="mb-2"> 예정된 회의가 있습니다. </h6>
+                                            <small class="text-muted">11월 18일 15:00</small>
                                         </div>
-                                        <p class="mb-2">Received payment $1,490 for banking ios app</p>
+                                        <p class="mb-2">000 회의가 예정되어 있습니다.</p>
                                     </div>
                                 </li>
                                 <li class="timeline-item timeline-item-transparent border-transparent">
                                     <span class="timeline-point timeline-point-warning"></span>
                                     <div class="timeline-event pb-1">
                                         <div class="timeline-header mb-1">
-                                            <h6 class="mb-2">Meeting with joseph morgan for next project</h6>
-                                            <small class="text-muted">April, 23</small>
+                                            <h6 class="mb-2">예정된 연수가 있습니다.</h6>
+                                            <small class="text-muted">11월 24일 13:00</small>
                                         </div>
-                                        <p class="mb-2">Meeting Video call on zoom at 9pm</p>
+                                        <p class="mb-2">000 연수가 예정되어 있습니다.</p>
                                         <div class="d-flex">
                                             <a href="javascript:void(0)" class="me-3">
                                                 <img
-                                                        src="../../assets/img/icons/misc/pdf.png"
+                                                        src="/img/icons/misc/pdf.png"
                                                         alt="PDF image"
                                                         width="20"
                                                         class="me-2" />
-                                                <span class="fw-medium">presentation.pdf</span>
+                                                <span class="fw-medium">연수자료.pdf</span>
                                             </a>
                                         </div>
                                     </div>
@@ -279,8 +276,8 @@
                                             width="120"
                                             alt="User avatar" />
                                     <div class="user-info text-center">
-                                        <h4>Violet Mendoza</h4>
-                                        <span class="badge bg-label-danger rounded-pill">Author</span>
+                                        <h4>김국민</h4>
+                                        <span class="badge bg-label-danger rounded-pill">담당자</span>
                                     </div>
                                 </div>
                             </div>
@@ -292,8 +289,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="mb-0">1.23k</h4>
-                                        <span>Tasks Done</span>
+                                        <h4 class="mb-0">123개</h4>
+                                        <span>작성한 문서</span>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center mt-3 gap-3">
@@ -303,8 +300,8 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <h4 class="mb-0">568</h4>
-                                        <span>Projects Done</span>
+                                        <h4 class="mb-0">58개</h4>
+                                        <span>즐겨찾기한 문서</span>
                                     </div>
                                 </div>
                             </div>
@@ -312,24 +309,24 @@
                             <div class="info-container">
                                 <ul class="list-unstyled mb-4">
                                     <li class="mb-3">
-                                        <span class="fw-medium text-heading me-2">Username:</span>
-                                        <span>violet.dev</span>
+                                        <span class="fw-medium text-heading me-2">이름:</span>
+                                        <span>김국민</span>
                                     </li>
                                     <li class="mb-3">
-                                        <span class="fw-medium text-heading me-2">Email:</span>
-                                        <span>vafgot@vultukir.org</span>
+                                        <span class="fw-medium text-heading me-2">이메일:</span>
+                                        <span>kimkookmin@kbfg.com</span>
                                     </li>
                                     <li class="mb-3">
-                                        <span class="fw-medium text-heading me-2">Status:</span>
-                                        <span class="badge bg-label-success rounded-pill">Active</span>
+                                        <span class="fw-medium text-heading me-2">상태:</span>
+                                        <span class="badge bg-label-success rounded-pill">접속중</span>
                                     </li>
                                     <li class="mb-3">
-                                        <span class="fw-medium text-heading me-2">Role:</span>
-                                        <span>Author</span>
+                                        <span class="fw-medium text-heading me-2">담당업무:</span>
+                                        <span>문서 작성</span>
                                     </li>
                                     <li class="mb-3">
-                                        <span class="fw-medium text-heading me-2">Contact:</span>
-                                        <span>(123) 456-7890</span>
+                                        <span class="fw-medium text-heading me-2">내선번호:</span>
+                                        <span>+1234</span>
                                     </li>
                                 </ul>
                                 <div class="d-flex justify-content-center">
@@ -421,7 +418,7 @@
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between">
                             <div class="card-title mb-0">
-                                <h5 class="m-0 me-2">자주 참조되는 문서</h5>
+                                <h5 class="m-0 me-2">많이 본 문서</h5>
                             </div>
                             <div class="dropdown">
                                 <button
@@ -444,8 +441,8 @@
                             <table class="table table-borderless border-top">
                                 <thead class="border-bottom">
                                 <tr>
-                                    <th>Instructors</th>
-                                    <th class="text-end">courses</th>
+                                    <th>문서 제목</th>
+                                    <th class="text-end">열람율</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -456,14 +453,14 @@
                                                 <img src="/img/avatars/1.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">Maven Analytics</h6>
-                                                <small class="text-truncate">Business Intelligence</small>
+                                                <h6 class="mb-1 text-truncate">00000 시행문</h6>
+                                                <small class="text-truncate">인재개발부 123</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="text-end">
                                         <div class="user-progress mt-lg-4">
-                                            <h6 class="mb-0">33</h6>
+                                            <h6 class="mb-0">97%</h6>
                                         </div>
                                     </td>
                                 </tr>
@@ -474,14 +471,14 @@
                                                 <img src="/img/avatars/2.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">Zsazsa McCleverty</h6>
-                                                <small class="text-truncate">Digital Marketing</small>
+                                                <h6 class="mb-1 text-truncate">00000 품의문</h6>
+                                                <small class="text-truncate">인재개발부 122</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="text-end">
                                         <div class="user-progress">
-                                            <h6 class="mb-0">52</h6>
+                                            <h6 class="mb-0">90%</h6>
                                         </div>
                                     </td>
                                 </tr>
@@ -492,14 +489,14 @@
                                                 <img src="/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">Nathan Wagner</h6>
-                                                <small class="text-truncate">UI/UX Design</small>
+                                                <h6 class="mb-1 text-truncate">00000 안내문</h6>
+                                                <small class="text-truncate">인재개발부 134</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="text-end">
                                         <div class="user-progress">
-                                            <h6 class="mb-0">12</h6>
+                                            <h6 class="mb-0">87%</h6>
                                         </div>
                                     </td>
                                 </tr>
@@ -510,14 +507,14 @@
                                                 <img src="/img/avatars/4.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">Emma Bowen</h6>
-                                                <small class="text-truncate">React Native</small>
+                                                <h6 class="mb-1 text-truncate">00000 시행문</h6>
+                                                <small class="text-truncate">인재개발부 132</small>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="text-end">
                                         <div class="user-progress">
-                                            <h6 class="mb-0">8</h6>
+                                            <h6 class="mb-0">84%</h6>
                                         </div>
                                     </td>
                                 </tr>
