@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 
 <html
-        lang="ko"
+        lang="en"
         class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
         dir="ltr"
         data-theme="theme-default"
@@ -57,13 +57,13 @@
   <link rel="stylesheet" href="/vendor/libs/select2/select2.css" />
   <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
   <!-- Vendors CSS 20231021-->
-  <link rel="stylesheet" href="/assets/vendor/libs/quill/katex.css" />
+  <link rel="stylesheet" href="/vendor/libs/quill/katex.css" />
   <link rel="stylesheet" href="/vendor/libs/quill/editor.css" />
 
   <!-- Page CSS -->
   <!-- Page CSS 20231021 -->
 
-  <link rel="stylesheet" href="/assets/vendor/css/pages/app-email.css" />
+  <link rel="stylesheet" href="/vendor/css/pages/app-email.css" />
 
   <!-- Helpers -->
   <script src="/vendor/js/helpers.js"></script>

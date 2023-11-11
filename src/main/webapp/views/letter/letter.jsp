@@ -3,13 +3,122 @@
 <%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx/0.5.0/html-docx.js"></script>
-<script src="/js/pdfmake.min.js"></script>
+<script src="/pdfjs/pdfmake.min.js"></script>
+<script src="/font/NanumGothic-Regular.ttf"></script>
+<script src="/pdfjs/bluebird.min.js"></script>
+<script src="/pdfjs/html2canvas.min.js"></script>
+<script src="/pdfjs/jspdf.min.js"></script>
 
 <script>
 
+    // PDF다운로드
+    function pdfPrint(){
+        // 현재 document.body의 html을 A4 크기에 맞춰 PDF로 변환
+        //html2canvas(document.body, {
+        html2canvas($("#emailEditor")[0] , {
+            onrendered: function (canvas) {
+
+                // 캔버스를 이미지로 변환
+                var imgData = canvas.toDataURL('image/png');
+
+                var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
+                var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+                var imgHeight = canvas.height * imgWidth / canvas.width;
+                var heightLeft = imgHeight;
+                var doc = new jsPDF('p', 'mm');
+                var position = 0;
+
+                // 첫 페이지 출력
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                // 한 페이지 이상일 경우 루프 돌면서 출력
+                while (heightLeft >= 20) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                // 파일 저장
+                doc.save('sample.pdf');
+                //이미지로 표현
+                //document.write('<img src="'+imgData+'" />');
+            }
+
+        });
+
+    }
+
+    //pdf 다운로드
+    var pdfMake = window.pdfMake;
+    var fontsLoaded = false;
+
+    function loadFonts() {
+        if (!fontsLoaded) {
+            fetch('/font/NanumGothic-Regular.ttf')
+                .then(response => response.arrayBuffer())
+                .then(fontBuffer => {
+                    const fontBase64 = btoa(String.fromCharCode.apply(null, new Uint8Array(fontBuffer)));
+                    pdfMake.fonts = {
+                        NanumGothic: {
+                            normal: fontBase64,
+                            bold: fontBase64,
+                            italics: fontBase64,
+                            bolditalics: fontBase64,
+                        },
+                    };
+                    fontsLoaded = true;
+                    createPdf(); // Call the function to create the PDF after loading the font
+                })
+                .catch(error => {
+                    console.error('Error loading font:', error);
+                });
+        }
+    }
+
+    function createPdf() {
+        // Sample client-side data
+        var peajes = {
+            item1: { value01: 'A', value02: 'B', value03: 'C', value04: 'D' },
+            item2: { value01: 'E', value02: 'F', value03: 'G', value04: 'H' },
+            // ... add more items as needed
+        };
+
+        var body = [];
+        var titulos = ['타이틀01', '타이틀02', '타이틀03', '타이틀04'];
+        body.push(titulos);
+
+        for (var key in peajes) {
+            if (peajes.hasOwnProperty(key)) {
+                var peaje = peajes[key];
+                var fila = [peaje.value01.toString(), peaje.value02.toString(), peaje.value03.toString(), peaje.value04.toString()];
+                body.push(fila);
+            }
+        }
+
+        var docDefinition = {
+            content: [
+                "Hello, this is a simple PDF generated using pdfmake!",
+                {
+                    bold: true,
+                    table: {
+                        headerRows: 1,
+                        widths: ['*', 'auto', 100, '*'],
+                        body: body,
+                    },
+                },
+            ],
+            defaultStyle: {
+                font: 'NanumGothic',
+            },
+        };
+
+        var pdf_name = 'pdf파일 만들기.pdf';
+        pdfMake.createPdf(docDefinition).download(pdf_name);
+    }
+
+
     $(document).ready(function (){
-            console.log(typeof '${apikey}');
 
             // 사용자 입력 필드
             const userInput = document.querySelector('#keyContents');
@@ -52,7 +161,6 @@
             const response = await fetch(apiEndpoint, requestOptions);
             const data = await response.json();
             const aiResponse = data.choices[0].message.content;
-
             return aiResponse;
         } catch (error) {
             console.error('OpenAI API 호출 중 오류 발생:', error);
@@ -75,7 +183,7 @@
                 const checkboxShortVal =checkboxShort.val();
                 const lengthStyle = checkboxLong.is(":checked") ? checkboxLongVal : checkboxShort.is(":checked") ? checkboxShortVal : '';
                 const messageForm = "본인이 KB국민은행의 은행원 "+empName+"이라고 생각하고,"+message+" 때문에 고객이 불만족스러운 상황에 대해 " +
-                    "사과하는 편지를 "+writingStyle+" 작성스타일로 "+lengthStyle+" 해 줘.";
+                    "사과하는 편지를 "+writingStyle+" 작성스타일로 "+lengthStyle+" 작성해 줘.";
 
 
                 console.log( "나의질문 : "+messageForm );
@@ -93,6 +201,7 @@
                     console.log("챗봇답변 : "+aiResponse);
                     //addMessage('챗봇', aiResponse);
                     $("#responseData").val(aiResponse);
+                    //$("#emailEditor").text(aiResponse);
                 } catch (error) {
                     console.error("답변을 받지 못했습니다!",error);
                 } finally {
@@ -102,13 +211,10 @@
         });
 
 
-
-
         // 다운로드 버튼 클릭 시 실행될 함수
         function downloadAsWord(text, fileName) {
             // Create a new Word document
             var doc = new docx.Document();
-
             // Add text to the document
             doc.addSection({
                 properties: {},
@@ -156,61 +262,22 @@
         })
 
 
-        //pdf 다운로드
-
-        function ajaxCall(callUrl, sendData, callBack){
-            $.ajax({
-                type : 'POST',
-                dataType : 'json',
-                url : callUrl,
-                data : sendData,
-                success : callBack
-            });
-        }
-        $("#pdfmake").click(function () { //버튼 id pdfmake 발생시 행동할 이벤트
-
-            ajaxCall(url, '',function(data) {
-                if ( data.result == true ) {
-                    var peajes = data.list;
-
-                    var body = [];
-                    var titulos = new Array( '타이틀01', '타이틀02', '타이틀03','타이틀04');
-                    body.push( titulos );
-                    var i = 0;
-                    for (key in peajes) {
-                        if (peajes.hasOwnProperty(key)) {
-                            var peaje = peajes[key];
-                            var fila = new Array();
-                            fila.push( peaje.value01.toString() );
-                            fila.push( peaje.value02.toString()  );
-                            fila.push( peaje.value03.toString() );
-                            fila.push( peaje.value04.toString()  );
-                            body.push(fila);
-                        }
-                        i++;
-                    }
-                }
-                var docDefinition = {
-                    content: [
-                        {
-                            table: {
-                                headerRows: 1,
-                                widths: [ '*', 'auto', 100, '*' ],
-                                body: body
-                            }
-                        }]
-                };//end docDefinition
-                var pdf_name = 'pdf파일 만들기.pdf'; // pdf 만들 파일의 이름
-                pdfMake.createPdf(docDefinition).download(pdf_name);
-            });
+        $("#pdfmake").click(function () {
+            //loadFonts();
+            pdfPrint();
         });
 
-
-
-
+        $("#sendResponseData").click(function (){
+            $("#emailEditor").val($("#responseData").val());
+        });
 
     })
+
+
 </script>
+
+
+
 <!-- Content wrapper -->
 <div class="content-wrapper">
     <!-- Content -->
@@ -264,13 +331,14 @@
                         <span class="bs-stepper-number">04</span>
                         <span class="d-flex flex-column gap-1 ms-2">
                           <span class="bs-stepper-title">최종 결과</span>
-                          <span class="bs-stepper-subtitle">결과물을 확인하고 제출합니다.</span>
+                          <span class="bs-stepper-subtitle">PDF파일로 저장하거나, 이메일을 발송합니다.</span>
                         </span>
                       </span>
                     </button>
                 </div>
             </div>
             <div class="bs-stepper-content">
+
                 <form id="wizard-create-deal-form" onSubmit="return false">
                     <!-- 원 : Deal Type / 현 : 작성 용도 -->
                     <div id="deal-type" class="content">
@@ -420,9 +488,7 @@
                                     고객님이 어떤 상황에서 불만족해 하셨나요?
                                     원인을 명사형으로 입력해주세요 !
                                      ex) 긴 대기시간을 겪은 상황"></textarea>
-
                                     <label for="keyContents">고객이 불만족한 이유</label>
-
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -514,7 +580,7 @@
                                     <i class="mdi mdi-arrow-left me-sm-1 me-0"></i>
                                     <span class="align-middle d-sm-inline-block d-none">이전으로</span>
                                 </button>
-                                <button class="btn btn-primary btn-next">
+                                <button class="btn btn-primary btn-next" id="sendResponseData">
                                     <span class="align-middle d-sm-inline-block d-none me-sm-1">다음으로</span>
                                     <i class="mdi mdi-arrow-right"></i>
                                 </button>
@@ -528,53 +594,32 @@
                                 <div class="row">
                                     <div class="col-6 mb-0">
                                         <h3>최종 결과입니다! 🚀</h3>
-                                        <p>작성된 편지를 이메일로 발송해보세요.</p>
+                                        <p>작성된 편지를 PDF로 저장하거나, 이메일로 발송해보세요.</p>
                                     </div>
-                                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                                        <img
-                                                class="img-fluid w-px-200"
-                                                src="/img/illustrations/create-deal-review-complete.png"
-                                                alt="process completed" />
-                                    </div>
-
-
                                     <!-- Email View : Reply mail-->
 <%--                                    <div class="email-reply card col-12 mb-0 mt-4 mx-sm-4 mx-3 border">--%>
-                                        <div class="email-reply card col-12 mb-0 border">
-                                        <h6 class="card-header border-0">이메일 작성</h6>
+                                        <div class=" card col-12 mb-0 border">
+                                        <h6 class="card-header border-0"></h6>
                                         <div class="card-body pt-0 px-3">
 
-                                            <div class="col-md-6">
+                                            <div class="col-sm-6">
                                                 <div class="form-floating form-floating-outline">
                                                     <input type="text" class="form-control" id="billings-email" placeholder="john.doe@gmail.com" />
-                                                    <label for="billings-email">Email Address</label>
+                                                    <label for="billings-email">받는 사람</label>
                                                 </div>
                                             </div>
-                                            <div class="email-compose-to d-flex align-items-center">
-                                                <label class="form-label mb-0 fs-6 text-muted" for="emailContacts">받는이</label>
-                                                <div class="select2-primary border-0 shadow-none flex-grow-1 mx-2">
-                                                    <input
-                                                            type="text"
-                                                            class="select2 select-email-contacts form-select"
-                                                            id="emailContacts"
-                                                            name="emailContacts"
-                                                    />
+                                            <h4 class="card-header border-0"></h4>
+
+                                            <div class="col-sm-12">
+                                                <div class="form-floating form-floating-outline">
+                                                    <input type="text" class="form-control" id="title-email" placeholder="안녕하십니까, 고객님" />
+                                                    <label for="title-email">제목</label>
                                                 </div>
-
                                             </div>
 
-                                            <div class="email-compose-to d-flex align-items-center">
-                                                <label class="form-label mb-0 fs-6 text-muted" for="emailSubject"  >제목</label>
-                                                <input
-                                                        type="text"
-                                                        class="select2-primary select-email-contacts form-select shadow-none flex-grow-1 mx-2"
-                                                        id="emailSubject"
-                                                        name="emailSubject"
-                                                        placeholder="제목을 입력하세요."
-                                                />
-                                            </div>
+                                            <h4 class="card-header border-0"></h4>
 
-                                            <div class="d-flex justify-content-start">
+                                          <%--  <div class="d-flex justify-content-start">
                                                 <div class="email-reply-toolbar border-0 w-100 ps-0">
                                                 <span class="ql-formats me-0">
                                                   <button class="ql-bold"></button>
@@ -586,15 +631,23 @@
                                                   <button class="ql-image"></button>
                                                 </span>
                                                 </div>
-                                            </div>
+                                            </div>--%>
 
-                                            <div class="email-reply-editor"></div>
+                                            <div class="col-sm-12">
+                                                <div class="form-floating form-floating-outline">
+                                                    <textarea
+                                                        id="emailEditor"
+                                                        name="emailEditor"
+                                                        class="form-control"
+                                                        style="height: 122px"
+                                                        placeholder=""></textarea>
+                                                </div>
+                                            </div>
+                                               <%-- <div class="email-reply-editor" id="emailEditor"></div>--%>
+
+                                            <h6 class="card-header border-0"></h6>
 
                                             <div class="d-flex justify-content-end align-items-center">
-                                                <div class="cursor-pointer me-3">
-                                                    <i class="mdi mdi-attachment"></i>
-                                                    <span class="align-middle">Attachments</span>
-                                                </div>
                                                 <button class="btn btn-primary" id="pdfmake">
                                                     <i class="mdi mdi-send-outline me-1"></i>
                                                     <span class="align-middle">Pdf</span>
@@ -606,7 +659,6 @@
                                             </div>
                                         </div>
                                     </div>
-
 
 
                                     <div class="col-12 mb-0">
@@ -651,16 +703,11 @@
                                         </table>
 
 
-                                        <div class="col-sm-6">
-                                            <div class="form-floating form-floating-outline">
-                                                <input
-                                                        type="text"
-                                                        id="dealDuration"
-                                                        name="dealDuration"
-                                                        class="form-control"
-                                                        placeholder="YYYY-MM-DD to YYYY-MM-DD" />
-                                                <label for="dealDuration">발송예정일</label>
-                                            </div>
+                                        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                                            <img
+                                                    class="img-fluid w-px-200"
+                                                    src="/img/illustrations/create-deal-review-complete.png"
+                                                    alt="process completed" />
                                         </div>
 
                                         <label class="switch">
@@ -686,7 +733,7 @@
                                     <i class="mdi mdi-arrow-left me-sm-1 me-0"></i>
                                     <span class="align-middle d-sm-inline-block d-none">이전</span>
                                 </button>
-                                <button class="btn btn-primary btn-submit btn-next">메일로 발송</button>
+                                <button class="btn btn-primary btn-submit btn-next">종료</button>
                             </div>
                         </div>
                     </div>
