@@ -25,6 +25,17 @@ public class MainController {
         return "gptmakeimage";
     }
 
+    @RequestMapping("/makecontract")
+    public String makeContract(Model model){
+        model.addAttribute("center", "makecontract");
+        return "index";
+    }
+
+    @RequestMapping("/app-calendar")
+    public String appCalendar(Model model){
+        return "app-calendar";
+    }
+
     @RequestMapping("/letter")
     public String letter(Model model){
         model.addAttribute("apikey",apikey);
