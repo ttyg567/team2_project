@@ -342,8 +342,12 @@
 
 
         var header = "<html>" +
-
-            "<head><meta charset='utf-8'></head><body>";
+            "<head><meta charset='utf-8'>" +
+            "<style>" +
+            "@page { margin: 0.5in; }" + // 여백 설정
+            "body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.5; }" + // 기타 스타일
+            "</style>" +
+            "</head><body>";
 
         var footer = "</body></html>";
 
@@ -371,7 +375,11 @@
     function hi098123inputcode() {
         //console.log($("#full-editor").children().text());
         const textareaContent = $(".ql-editor").children().text();
-        document.getElementById("source-html").value = textareaContent;
+        var formattedContent = textareaContent.replace(/\n/g, "<br>");
+        var formattedContent2 = formattedContent.replace(/-/g, "&nbsp -");
+        document.getElementById("source-html").value = formattedContent2;
+        var textval = document.getElementById("source-html").value;
+        console.log(textval);
     }
 
 </script>
