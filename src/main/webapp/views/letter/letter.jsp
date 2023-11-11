@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx/0.5.0/html-docx.js"></script>
+<script src="/js/pdfmake.min.js"></script>
 
 <script>
 
@@ -153,6 +154,56 @@
                 downloadAsWord(textToDownload, fileName);
             }
         })
+
+
+        //pdf 다운로드
+
+        function ajaxCall(callUrl, sendData, callBack){
+            $.ajax({
+                type : 'POST',
+                dataType : 'json',
+                url : callUrl,
+                data : sendData,
+                success : callBack
+            });
+        }
+        $("#pdfmake").click(function () { //버튼 id pdfmake 발생시 행동할 이벤트
+
+            ajaxCall(url, '',function(data) {
+                if ( data.result == true ) {
+                    var peajes = data.list;
+
+                    var body = [];
+                    var titulos = new Array( '타이틀01', '타이틀02', '타이틀03','타이틀04');
+                    body.push( titulos );
+                    var i = 0;
+                    for (key in peajes) {
+                        if (peajes.hasOwnProperty(key)) {
+                            var peaje = peajes[key];
+                            var fila = new Array();
+                            fila.push( peaje.value01.toString() );
+                            fila.push( peaje.value02.toString()  );
+                            fila.push( peaje.value03.toString() );
+                            fila.push( peaje.value04.toString()  );
+                            body.push(fila);
+                        }
+                        i++;
+                    }
+                }
+                var docDefinition = {
+                    content: [
+                        {
+                            table: {
+                                headerRows: 1,
+                                widths: [ '*', 'auto', 100, '*' ],
+                                body: body
+                            }
+                        }]
+                };//end docDefinition
+                var pdf_name = 'pdf파일 만들기.pdf'; // pdf 만들 파일의 이름
+                pdfMake.createPdf(docDefinition).download(pdf_name);
+            });
+        });
 
 
 
@@ -544,6 +595,10 @@
                                                     <i class="mdi mdi-attachment"></i>
                                                     <span class="align-middle">Attachments</span>
                                                 </div>
+                                                <button class="btn btn-primary" id="pdfmake">
+                                                    <i class="mdi mdi-send-outline me-1"></i>
+                                                    <span class="align-middle">Pdf</span>
+                                                </button>
                                                 <button class="btn btn-primary">
                                                     <i class="mdi mdi-send-outline me-1"></i>
                                                     <span class="align-middle">Send</span>
