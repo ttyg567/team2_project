@@ -376,7 +376,7 @@
         //console.log($("#full-editor").children().text());
         const textareaContent = $(".ql-editor").children().text();
         var formattedContent = textareaContent.replace(/\n/g, "<br>");
-        var formattedContent2 = formattedContent.replace(/-/g, "&nbsp -");
+        var formattedContent2 = formattedContent.replace(/-/g, "&nbsp&nbsp -");
         document.getElementById("source-html").value = formattedContent2;
         var textval = document.getElementById("source-html").value;
         console.log(textval);
