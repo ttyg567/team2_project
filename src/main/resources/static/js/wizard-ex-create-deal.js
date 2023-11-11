@@ -134,18 +134,18 @@
     });
 
     // select2 (Offered Item)
-    const dealOfferedItem = $('#dealOfferedItem');
-    if (dealOfferedItem.length) {
-      select2Focus(dealOfferedItem);
-      dealOfferedItem.wrap('<div class="position-relative"></div>');
-      dealOfferedItem
+    const writingStyle = $('#writingStyle');
+    if (writingStyle.length) {
+      select2Focus(writingStyle);
+      writingStyle.wrap('<div class="position-relative"></div>');
+      writingStyle
         .select2({
-          placeholder: 'Select an offered item',
-          dropdownParent: dealOfferedItem.parent()
+          placeholder: '클릭하여 선택해주세요.',
+          dropdownParent: writingStyle.parent()
         })
         .on('change.select2', function () {
           // Revalidate the field if needed when an option is chosen
-          // FormValidation2.revalidateField('dealOfferedItem');
+          // FormValidation2.revalidateField('writingStyle');
         });
     }
 
