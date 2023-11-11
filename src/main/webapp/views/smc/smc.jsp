@@ -3,19 +3,19 @@
 <%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <!-- Content wrapper -->
 <div class="content-wrapper">
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Input groups</h4>
+        <h4 class="py-3 mb-4"><span class="mdi mdi-head-snowflake-outline mdi-48px"></span>기획서 생성</h4>
 
         <div class="row">
             <!-- Floating (Outline) -->
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <h5 class="card-header">주제 및 내용</h5>
+                    <h5 class="card-header"><span class="mdi mdi-file-document-edit-outline mdi-36px"></span>주제 및 내용
+                    </h5>
                     <div class="card-body demo-vertical-spacing demo-only-element">
                         <%--                        <div class="form-floating form-floating-outline">--%>
                         <%--                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">--%>
@@ -104,7 +104,7 @@
                                   class="form-control h-px-75"
                                   aria-label="With textarea"
                                   placeholder="Lorem ipsum"
-                                  id="answer">내부인력을 활용한 개발직무 양성 프로젝트</textarea>
+                                  id="answer">은행의 내부인력을 활용한 개발직무 양성 프로젝트</textarea>
                                 <label>주제</label>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                                                       class="form-control h-px-75"
                                                       aria-label="With textarea"
                                                       placeholder="Lorem ipsum"
-                                                      id="answer2">개발직무 양성과정에 필요한 커리큘럼들은 무엇인지</textarea>
+                                                      id="answer2">개발직무 양성과정에 필요한 교육 커리큘럼들은 무엇인지</textarea>
                                 <label>본론</label>
                             </div>
                         </div>
@@ -154,13 +154,14 @@
             <!-- Full Editor -->
             <div class="col-8">
                 <div class="card">
-                    <h5 class="card-header">답변 및 편집</h5>
+                    <h5 class="card-header">
+                        <span class="mdi mdi-file-document-edit-outline mdi-36px"></span>답변 및 편집
+                        <button id="downloadButton">다운로드</button>
+                    </h5>
                     <div class="card-body">
                         <div id="full-editor">
-                            <h6>Quill Rich Text Editor</h6>
                             <p>
-                                Cupcake ipsum dolor sit amet. Halvah cheesecake chocolate bar gummi bears cupcake. Pie
-                                macaroon bear claw. Soufflé I love candy canes I love cotton candy I love.
+
                             </p>
                         </div>
                     </div>
@@ -244,7 +245,7 @@
 서론은 \${message1} 내용을 중점적으로 작성해주고,
 본론은 \${message2} 내용을 중점적으로 세가지로 나누어 작성해주고,
 결론은 \${message3} 내용을 중점적으로 작성해줘.
-보고서의 형식은 아래에 있는 형식에 맞춰서 작성해주고, 답변의 각 문장은 반드시 '~임', '~됨', '~있음', '~함' 으로 끝나는 문장으로 작성해줘
+보고서의 형식은 아래에 있는 형식에 무조건 맞춰서 작성해주고, 답변의 각 문장은 반드시 '~임', '~됨', '~있음', '~함' 으로 끝나는 문장으로 작성해줘.
 
         제목 :
 
@@ -265,7 +266,8 @@
 
         결론
          -
-         - `;
+         -
+         `;
                 console.log("나의질문 : " + finalmessage);
                 // 메시지가 비어있으면 리턴
                 if (finalmessage.length === 0) return;
@@ -273,9 +275,25 @@
                 //addMessage('나', finalmessage);
                 //userInput.value = '';
                 //ChatGPT API 요청후 답변을 화면에 추가
+                //$('#full-editor').append(`<span class="mdi mdi-loading mdi-spin mdi-36px"></span>`);
+
                 const aiResponse = await fetchAIResponse(finalmessage);
                 console.log("챗봇답변 : " + aiResponse);
-                $('#full-editor').children(1).text(aiResponse);
+
+                //$('#full-editor').children().text(aiResponse);
+
+                var typingSpeed = 10; // 타이핑 속도 (밀리초 단위)
+                function typeText(index) {
+                    if (index < aiResponse.length) {
+                        var currentText = aiResponse.substring(0, index + 1);
+                        $("#full-editor").children().text(currentText);
+                        setTimeout(function () {
+                            typeText(index + 1);
+                        }, typingSpeed);
+                    }
+                }
+
+                typeText(0);
                 //addMessage('챗봇', aiResponse);
 
             });
@@ -292,8 +310,79 @@
 
     <!-- / Content -->
     <div class="content-backdrop fade"></div>
+
+    <div class="col-xs-3 col-xs-offset-3 text-center">
+
+        <a id="hi098123btn" style="float: right;width: 30%;margin: 4px 0px;padding: 10px 0px;"
+           onclick="hi098123inputcode();">예제 코드 넣기</a>
+
+        <textarea style="width: 100%; height: 200px; background-color: #eff;resize: vertical;" id="source-html"
+                  placeholder="여기에 html로 작성해주세요"></textarea>
+
+
+        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="htmlToFile('hwp');">한글(.hwp)
+            다운로드</a>
+
+        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="htmlToFile('doc');">워드(.doc)
+            다운로드</a>
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <p>한가지 주의: hwp다운로드 후 열때 UTF-8으로 여셔야 됩니다. 웹브라우저 상에서는 UTF-8를 메인으로 사용 하기 때문에</p>
+
+    </div>
+
+
 </div>
 <!-- Content wrapper -->
+
+<script>
+    function htmlToFile(file) {
+
+
+        var header = "<html>" +
+            "<head><meta charset='utf-8'>" +
+            "<style>" +
+            "@page { margin: 0.5in; }" + // 여백 설정
+            "body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.5; }" + // 기타 스타일
+            "</style>" +
+            "</head><body>";
+
+        var footer = "</body></html>";
+
+        var textval = document.getElementById("source-html").value;
+
+        var sourceHTML = header + textval + footer;
+
+        var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+
+        var fileDownload = document.createElement("a");
+
+        document.body.appendChild(fileDownload);
+
+        fileDownload.href = source;
+
+        fileDownload.download = 'hi098123file.' + file;
+
+        fileDownload.click();
+
+        document.body.removeChild(fileDownload);
+
+    }
+
+
+    function hi098123inputcode() {
+        //console.log($("#full-editor").children().text());
+        const textareaContent = $(".ql-editor").children().text();
+        var formattedContent = textareaContent.replace(/\n/g, "<br>");
+        var formattedContent2 = formattedContent.replace(/-/g, "&nbsp&nbsp -");
+        document.getElementById("source-html").value = formattedContent2;
+        var textval = document.getElementById("source-html").value;
+        console.log(textval);
+    }
+
+</script>
 
 <!-- Vendors CSS -->
 <link rel="stylesheet" href="/vendor/libs/quill/typography.css"/>
@@ -305,3 +394,5 @@
 <script src="/vendor/libs/quill/quill.js"></script>
 <!-- Page JS -->
 <script src="/js/forms-editors.js"></script>
+
+
