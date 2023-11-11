@@ -9,7 +9,7 @@
 (function () {
   let labelColor, headingColor, borderColor, currentTheme;
 
-  if (isDarkStyle) {
+/*  if (isDarkStyle) {
     labelColor = config.colors_dark.textMuted;
     headingColor = config.colors_dark.headingColor;
     borderColor = config.colors_dark.borderColor;
@@ -19,7 +19,7 @@
     headingColor = config.colors.headingColor;
     borderColor = config.colors.borderColor;
     currentTheme = 'light';
-  }
+  }*/
 
   // Donut Chart Colors
   const chartColors = {
@@ -335,12 +335,11 @@
           targets: 1,
           orderable: false,
           searchable: false,
-          checkboxes: true,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
           checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
+            selectAllRender: '<input type="checkbox" class="form-check-input">',
+            render: function () {
+              return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+            }
           }
         },
         {
