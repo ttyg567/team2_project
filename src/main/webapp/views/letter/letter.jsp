@@ -565,7 +565,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-12">
+                            <%--<div class="col-lg-12">
                                 <label class="switch">
                                     <input type="checkbox" class="switch-input" id="switchInput" name="switchInput" />
                                     <span class="switch-toggle-slider">
@@ -574,7 +574,7 @@
                                     </span>
                                     <span class="switch-label"> 이 답변을 저장하시겠어요? </span>
                                 </label>
-                            </div>
+                            </div>--%>
                             <div class="col-12 d-flex justify-content-between">
                                 <button class="btn btn-outline-secondary btn-prev">
                                     <i class="mdi mdi-arrow-left me-sm-1 me-0"></i>
@@ -639,7 +639,7 @@
                                                         id="emailEditor"
                                                         name="emailEditor"
                                                         class="form-control"
-                                                        style="height: 122px"
+                                                        style="height: 600px"
                                                         placeholder=""></textarea>
                                                 </div>
                                             </div>
@@ -662,7 +662,7 @@
 
 
                                     <div class="col-12 mb-0">
-                                        <table class="table table-borderless">
+                                       <%-- <table class="table table-borderless">
                                             <tbody>
                                             <tr>
                                                 <td class="ps-0 align-top text-nowrap py-1">
@@ -700,7 +700,7 @@
                                                 </td>
                                             </tr>
                                             </tbody>
-                                        </table>
+                                        </table>--%>
 
 
                                         <div class="col-lg-6 d-flex align-items-center justify-content-center">
@@ -710,14 +710,14 @@
                                                     alt="process completed" />
                                         </div>
 
-                                        <label class="switch">
+                                       <%-- <label class="switch">
                                             <input type="checkbox" class="switch-input" id="dealConfirmed" name="dealConfirmed" />
                                             <span class="switch-toggle-slider">
                                               <span class="switch-on"></span>
                                               <span class="switch-off"></span>
                                             </span>
                                             <span class="switch-label"> 위 내용을 확인했습니다. </span>
-                                        </label>
+                                        </label>--%>
 
 
                                     </div>
