@@ -240,13 +240,19 @@
                 <li class="menu-item">
                     <a href="/gptmakeimage" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진(이미지생성)"></div>
+                        <div data-i18n="권현진(이미지생성)">권현진(이미지생성)</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="app-email.html" class="menu-link">
+                    <a href="/makecontract" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진(계약서작성)"></div>
+                        <div data-i18n="권현진(계약서작성)">권현진(계약서작성)</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/app-calendar" class="menu-link">
+                        <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+                        <div data-i18n="스케쥴관리">스케쥴관리</div>
                     </a>
                 </li>
                 <li class="menu-item">
