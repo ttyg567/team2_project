@@ -49,6 +49,10 @@
     <link rel="stylesheet" href="/vendor/css/rtl/theme-default.css"/>
     <link rel="stylesheet" href="/css/demo.css"/>
 
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"/>
     <link rel="stylesheet" href="/vendor/libs/typeahead-js/typeahead.css"/>
@@ -63,12 +67,16 @@
     <link rel="stylesheet" href="/vendor/libs/select2/select2.css" />
     <link rel="stylesheet" href="/vendor/libs/quill/editor.css" />
     <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
-
+    <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css" />
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/app-calendar.css" />
+    <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css" />
+
+    <!-- Login Page -->
+    <link rel="stylesheet" href="/vendor/css/pages/page-auth.css" />
 
     <!-- Helpers -->
     <script src="/vendor/js/helpers.js"></script>
@@ -86,7 +94,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="/" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <span style="color: var(--bs-primary)">
                   <svg width="268" height="150" viewBox="0 0 38 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -761,18 +769,25 @@
 <script src="/vendor/libs/typeahead-js/typeahead.js"></script>
 <script src="/vendor/js/menu.js"></script>
 
-
-<!-- endbuild -->
-
 <!-- Vendors JS -->
 <script src="/vendor/libs/apex-charts/apexcharts.js"></script>
 <script src="/vendor/libs/swiper/swiper.js"></script>
+<script src="/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<script src="/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
+<script src="/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+<script src="/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
 
 <!-- Main JS -->
 <script src="/js/main.js"></script>
 
 <!-- Page JS -->
 <script src="/js/dashboards-analytics.js"></script>
+<script src="/js/app-ecommerce-dashboard.js"></script>
+<script src="/js/pages-auth.js"></script>
 
 </body>
 </html>
+
+
+
+

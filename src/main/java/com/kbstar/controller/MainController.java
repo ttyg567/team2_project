@@ -30,4 +30,19 @@ public class MainController {
         model.addAttribute("apikey",apikey);
         return "letter/letterIndex";
     }
+
+    @RequestMapping("/login")
+    public String login(Model model) {
+        model.addAttribute("center", "login");
+        return "index";
+    }
+
+    @RequestMapping("/calendar")
+    public String calendar(Model model) {
+        model.addAttribute("center", "calendar");
+        return "index";
+    }
+
+
+
 }
