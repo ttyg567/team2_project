@@ -15,14 +15,16 @@
     function pdfPrint(){
         // 현재 document.body의 html을 A4 크기에 맞춰 PDF로 변환
         //html2canvas(document.body, {
-        html2canvas($("#emailEditor")[0] , {
+        html2canvas($("#pdfMakeDiv")[0] , {
             onrendered: function (canvas) {
 
                 // 캔버스를 이미지로 변환
                 var imgData = canvas.toDataURL('image/png');
 
-                var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
-                var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+                //var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
+                var imgWidth = 179; // 이미지 가로 길이(mm) A4 기준
+                //var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
+                var pageHeight = 159;  // 출력 페이지 세로 길이 계산 A4 기준
                 var imgHeight = canvas.height * imgWidth / canvas.width;
                 var heightLeft = imgHeight;
                 var doc = new jsPDF('p', 'mm');
@@ -634,13 +636,18 @@
                                             </div>--%>
 
                                             <div class="col-sm-12">
-                                                <div class="form-floating form-floating-outline">
+                                                <div class="form-floating form-floating-outline"
+                                                     id = "pdfMakeDiv"
+                                                     style="display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;"
+                                                     >
                                                     <textarea
-                                                        id="emailEditor"
-                                                        name="emailEditor"
-                                                        class="form-control"
-                                                        style="height: 600px"
-                                                        placeholder=""></textarea>
+                                                            id="emailEditor"
+                                                            name="emailEditor"
+                                                            class="form-control"
+                                                            style="height: 600px"
+                                                            placeholder="">
+                                                    </textarea>
+                                                    <img src="/img/logo/KB.jpg" style="width: 600px;">
                                                 </div>
                                             </div>
                                                <%-- <div class="email-reply-editor" id="emailEditor"></div>--%>
@@ -649,8 +656,8 @@
 
                                             <div class="d-flex justify-content-end align-items-center">
                                                 <button class="btn btn-primary" id="pdfmake">
-                                                    <i class="mdi mdi-send-outline me-1"></i>
-                                                    <span class="align-middle">Pdf</span>
+                                                    <i class="mdi mdi-export-variant me-1"></i>
+                                                    <span class="d-none d-sm-inline-block">Pdf</span>
                                                 </button>
                                                 <button class="btn btn-primary">
                                                     <i class="mdi mdi-send-outline me-1"></i>
@@ -703,12 +710,12 @@
                                         </table>--%>
 
 
-                                        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                                     <%--   <div class="col-lg-6 d-flex align-items-center justify-content-center">
                                             <img
                                                     class="img-fluid w-px-200"
                                                     src="/img/illustrations/create-deal-review-complete.png"
                                                     alt="process completed" />
-                                        </div>
+                                        </div>--%>
 
                                        <%-- <label class="switch">
                                             <input type="checkbox" class="switch-input" id="dealConfirmed" name="dealConfirmed" />
@@ -731,9 +738,13 @@
                             <div class="col-12 d-flex justify-content-between mt-5">
                                 <button class="btn btn-outline-secondary btn-prev">
                                     <i class="mdi mdi-arrow-left me-sm-1 me-0"></i>
-                                    <span class="align-middle d-sm-inline-block d-none">이전</span>
+                                    <span class="align-middle d-sm-inline-block d-none">이전으로</span>
                                 </button>
-                                <button class="btn btn-primary btn-submit btn-next">종료</button>
+
+                            <a href="/" class="btn btn-primary">
+                              종료
+                            </a>
+
                             </div>
                         </div>
                     </div>
