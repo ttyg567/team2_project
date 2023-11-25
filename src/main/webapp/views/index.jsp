@@ -91,7 +91,7 @@
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-        <!-- Menu -->
+        <!-- 좌측 메뉴 -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
                 <a href="/" class="app-brand-link">
@@ -293,12 +293,11 @@
                 </li>
             </ul>
         </aside>
-        <!-- / Menu -->
+        <!-- 좌측 메뉴 끝 -->
 
         <!-- Layout container -->
         <div class="layout-page">
-            <!-- Navbar -->
-
+            <!-- 상단 Navbar -->
             <nav
                     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
@@ -736,8 +735,7 @@
                     <i class="mdi mdi-close search-toggler cursor-pointer"></i>
                 </div>
             </nav>
-
-            <!-- / Navbar -->
+            <!-- 상단 Navbar 끝 -->
 
             <!-- center.jsp -->
             <c:choose>
