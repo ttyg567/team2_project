@@ -36,6 +36,12 @@ public class MainController {
         return "app-calendar";
     }
 
+/*    @RequestMapping("/app-calendar")
+    public String appCalendar(Model model){
+        model.addAttribute("center", "calendar");
+        return "index";
+    }*/
+
     @RequestMapping("/letter")
     public String letter(Model model){
         model.addAttribute("apikey",apikey);

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
+
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
     <!-- Layout container -->
