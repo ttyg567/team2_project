@@ -775,6 +775,6 @@
 <!-- Page JS -->
 <script src="/js/wizard-ex-create-deal.js"></script>
 <!-- Page JS 20231021 -->
-<script src="/js/app-email.js"></script>
+<%--<script src="/js/app-email.js"></script>--%>
 </body>
 </html>
