@@ -2,7 +2,6 @@ package com.kbstar.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,22 +18,20 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping("/app-ecommerce-category-list")
-    public String appecommercecategorylist(Model model) {
-        return "app-ecommerce-category-list";
-    }
-
+    //이미지 생성 팝업 화면
     @RequestMapping("/gptmakeimage")
     public String gptMakeImage(Model model){
         return "gptmakeimage";
     }
 
+    //계약서 작성
     @RequestMapping("/makecontract")
     public String makeContract(Model model){
         model.addAttribute("center", "makecontract");
         return "index";
     }
 
+    //계약서 작성 표지화면
     @RequestMapping("/app-chat")
     public String makeContractMain(Model model){
         model.addAttribute("center", "app-chat");
