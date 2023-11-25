@@ -19,6 +19,10 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping("/app-ecommerce-category-list")
+    public String appecommercecategorylist(Model model) {
+        return "app-ecommerce-category-list";
+    }
 
     @RequestMapping("/gptmakeimage")
     public String gptMakeImage(Model model){
@@ -28,6 +32,12 @@ public class MainController {
     @RequestMapping("/makecontract")
     public String makeContract(Model model){
         model.addAttribute("center", "makecontract");
+        return "index";
+    }
+
+    @RequestMapping("/app-chat")
+    public String makeContractMain(Model model){
+        model.addAttribute("center", "app-chat");
         return "index";
     }
 
