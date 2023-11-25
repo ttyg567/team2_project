@@ -2,100 +2,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
     <!-- Content -->
 
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="py-3 mb-4"><span class="mdi mdi-head-snowflake-outline mdi-48px"></span>기획서 생성</h4>
+        <h4 class="py-3 mb-4"><span class="mdi mdi-head-snowflake-outline mdi-48px"></span>기획서&보고서 생성</h4>
 
         <div class="row">
             <!-- Floating (Outline) -->
             <div class="col-md-4">
                 <div class="card mb-4">
-                    <h5 class="card-header"><span class="mdi mdi-file-document-edit-outline mdi-36px"></span>주제 및 내용
+                    <h5 class="card-header"><span class="mdi mdi-file-document-edit-outline mdi-36px">주제 및 내용</span>
                     </h5>
+                    <ol>
+                        <li style="font-size: 10pt">작성하실 기획&보고서의 주제를 입력하세요.</li>
+                        <li style="font-size: 10pt">서론/본론/결론에서 작성돼야 할 내용을 입력하세요.</li>
+                        <li style="font-size: 10pt">'전송'하여 문서 생성 및 편집</li>
+                    </ol>
                     <div class="card-body demo-vertical-spacing demo-only-element">
-                        <%--                        <div class="form-floating form-floating-outline">--%>
-                        <%--                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">--%>
-                        <%--                                <option>Open this select menu</option>--%>
-                        <%--                                <option value="1">One</option>--%>
-                        <%--                                <option value="2">Two</option>--%>
-                        <%--                                <option value="3">Three</option>--%>
-                        <%--                            </select>--%>
-                        <%--                            <label for="floatingSelect">Works with selects</label>--%>
-                        <%--                        </div>--%>
-
-                        <%--                        <div class="input-group input-group-merge">--%>
-                        <%--                            <span class="input-group-text">@</span>--%>
-                        <%--                            <div class="form-floating form-floating-outline">--%>
-                        <%--                                <input--%>
-                        <%--                                        type="text"--%>
-                        <%--                                        class="form-control"--%>
-                        <%--                                        id="basic-addon11"--%>
-                        <%--                                        placeholder="John Doe"--%>
-                        <%--                                        aria-label="Username"--%>
-                        <%--                                        aria-describedby="basic-addon11" />--%>
-                        <%--                                <label for="basic-addon11">Username</label>--%>
-                        <%--                            </div>--%>
-                        <%--                        </div>--%>
-
-                        <%--                        <div class="form-password-toggle">--%>
-                        <%--                            <div class="input-group input-group-merge">--%>
-                        <%--                                <div class="form-floating form-floating-outline">--%>
-                        <%--                                    <input--%>
-                        <%--                                            type="password"--%>
-                        <%--                                            class="form-control"--%>
-                        <%--                                            id="basic-default-password12"--%>
-                        <%--                                            placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"--%>
-                        <%--                                            aria-describedby="basic-default-password12" />--%>
-                        <%--                                    <label for="basic-default-password12">Password</label>--%>
-                        <%--                                </div>--%>
-                        <%--                                <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>--%>
-                        <%--                            </div>--%>
-                        <%--                        </div>--%>
-
-                        <%--                        <div class="input-group input-group-merge">--%>
-                        <%--                            <div class="form-floating form-floating-outline">--%>
-                        <%--                                <input--%>
-                        <%--                                        type="text"--%>
-                        <%--                                        class="form-control"--%>
-                        <%--                                        id="basic-addon13"--%>
-                        <%--                                        placeholder="john.doe"--%>
-                        <%--                                        aria-label="Recipient's username"--%>
-                        <%--                                        aria-describedby="basic-addon13" />--%>
-                        <%--                                <label for="basic-addon13">Recipient's username</label>--%>
-                        <%--                            </div>--%>
-                        <%--                            <span class="input-group-text">@example.com</span>--%>
-                        <%--                        </div>--%>
-
-                        <%--                        <div class="input-group input-group-merge">--%>
-                        <%--                            <span class="input-group-text">https://example.com/users/</span>--%>
-                        <%--                            <div class="form-floating form-floating-outline">--%>
-                        <%--                                <input--%>
-                        <%--                                        type="text"--%>
-                        <%--                                        class="form-control"--%>
-                        <%--                                        placeholder="id"--%>
-                        <%--                                        id="basic-url14"--%>
-                        <%--                                        aria-describedby="basic-url14" />--%>
-                        <%--                                <label for="basic-url14">URL</label>--%>
-                        <%--                            </div>--%>
-                        <%--                        </div>--%>
-
-                        <%--                        <div class="input-group input-group-merge">--%>
-                        <%--                            <span class="input-group-text">$</span>--%>
-                        <%--                            <div class="form-floating form-floating-outline">--%>
-                        <%--                                <input--%>
-                        <%--                                        type="number"--%>
-                        <%--                                        class="form-control"--%>
-                        <%--                                        placeholder="499"--%>
-                        <%--                                        aria-label="Amount (to the nearest dollar)" />--%>
-                        <%--                                <label>Amount</label>--%>
-                        <%--                            </div>--%>
-                        <%--                            <span class="input-group-text">.00</span>--%>
-                        <%--                        </div>--%>
-
 
                         <div class="input-group input-group-merge">
                             <%--                            <span class="input-group-text">With textarea</span>--%>
@@ -150,13 +77,16 @@
                     </div>
                 </div>
             </div>
-
             <!-- Full Editor -->
             <div class="col-8">
                 <div class="card">
-                    <h5 class="card-header">
-                        <span class="mdi mdi-file-document-edit-outline mdi-36px"></span>답변 및 편집
-                        <button id="downloadButton">다운로드</button>
+                    <h5 class="card-header" style="display: flex; justify-content: space-between;">
+                        <span class="mdi mdi-file-document-edit-outline mdi-36px">생성 및 편집</span>
+                        <button id="downBtn" class="btn btn-primary waves-effect waves-light"
+                                onclick="htmlToFile('doc');" style="display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;">다운로드
+                        </button>
                     </h5>
                     <div class="card-body">
                         <div id="full-editor">
@@ -164,11 +94,14 @@
 
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
             <!-- /Full Editor -->
         </div>
+
+        <div style="display: block; justify-content: left; align-items: stretch"></div>
 
         <script>
             // 채팅 메시지를 표시할 DOM
@@ -236,6 +169,13 @@
 
             // 전송 버튼 클릭 이벤트 처리
             sendButton.addEventListener('click', async () => {
+                var newElement = $("<img id='bbgif' style='width: 200px; height: 200px' src='https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBtdTNuYm1ubDRnajh2MjVidjVzdms2bWdwMXN4cG5pM2Q3bWpmNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3glE7zIDgW2JrPIr7l/giphy.gif'>");
+                $(".ql-editor:first").css({
+                    "display": "flex",
+                    "justify-content": "center",
+                    "align-items": "center"
+                });
+                $(".ql-editor:first").append(newElement);
                 // 사용자가 입력한 메시지
                 const message = userInput.value.trim();
                 const message1 = userInput1.value.trim();
@@ -282,6 +222,13 @@
 
                 //$('#full-editor').children().text(aiResponse);
 
+                $(".ql-editor:first").css({
+                    "display": "block",
+                    "justify-content": "left",
+                    "align-items": "stretch"
+                });
+
+
                 var typingSpeed = 10; // 타이핑 속도 (밀리초 단위)
                 function typeText(index) {
                     if (index < aiResponse.length) {
@@ -296,6 +243,9 @@
                 typeText(0);
                 //addMessage('챗봇', aiResponse);
 
+                fadeIn();
+
+
             });
             // 사용자 입력 필드에서 Enter 키 이벤트를 처리
             userInput.addEventListener('keydown', (event) => {
@@ -304,6 +254,7 @@
                 }
             });
 
+
         </script>
 
     </div>
@@ -311,7 +262,7 @@
     <!-- / Content -->
     <div class="content-backdrop fade"></div>
 
-    <div class="col-xs-3 col-xs-offset-3 text-center">
+    <div class="col-xs-3 col-xs-offset-3 text-center" style="display: none">
 
         <a id="hi098123btn" style="float: right;width: 30%;margin: 4px 0px;padding: 10px 0px;"
            onclick="hi098123inputcode();">예제 코드 넣기</a>
@@ -319,11 +270,10 @@
         <textarea style="width: 100%; height: 200px; background-color: #eff;resize: vertical;" id="source-html"
                   placeholder="여기에 html로 작성해주세요"></textarea>
 
-
-        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="htmlToFile('hwp');">한글(.hwp)
+        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="htmlToFile('doc');">워드(.doc)
             다운로드</a>
 
-        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="htmlToFile('doc');">워드(.doc)
+        <a style="width: 100%;margin: 4px 0px;padding: 10px 0px;" onclick="saveAsPDF();">pdf
             다운로드</a>
 
         <p>&nbsp;</p>
@@ -331,6 +281,7 @@
 
         <p>한가지 주의: hwp다운로드 후 열때 UTF-8으로 여셔야 됩니다. 웹브라우저 상에서는 UTF-8를 메인으로 사용 하기 때문에</p>
 
+        <tap></tap>
     </div>
 
 
@@ -338,7 +289,17 @@
 <!-- Content wrapper -->
 
 <script>
+    function saveAsPDF() {
+        var element = document.getElementById("source-html").value;
+        html2pdf(element);
+    }
+
     function htmlToFile(file) {
+
+        hi098123inputcode();
+
+        var today = new Date();
+        var formattedDate = today.toISOString().slice(0, 10);
 
 
         var header = "<html>" +
@@ -346,8 +307,63 @@
             "<style>" +
             "@page { margin: 0.5in; }" + // 여백 설정
             "body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.5; }" + // 기타 스타일
+            `table {
+            justify-content: center;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: none;
+            padding: 8px;
+            text-align: left;
+        }
+
+        td:nth-child(1),
+        td:nth-child(3) {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td:nth-child(1),
+        td:nth-child(3) {
+            width: 12%;
+        }
+
+        td:nth-child(2),
+        td:nth-child(4) {
+            width: 38%;
+        }` +
             "</style>" +
-            "</head><body>";
+            "</head><body>" +
+            `<div style="display: flex; justify-content: center;">
+        <p style="text-align: center; background-color: #dcdcdc; color: #333; font-size: 12px; width: auto;">“최고의 인재와 담대한 혁신으로 가장 신뢰받는 평생금융파트너”</p>
+    </div>
+    <br>
+    <div style="display: flex; justify-content: center;">
+        <table>
+            <tr>
+                <td>문서번호 :</td>
+                <td>인재개발부 146</td>
+                <td>기 안 자 :</td>
+                <td>김국민</td>
+            </tr>
+            <tr>
+                <td>일 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시 :</td>
+                <td>\${formattedDate}</td>
+                <td>발&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신 :</td>
+                <td>경영지원그룹대표</td>
+            </tr>
+            <tr>
+                <td>수신분류 :</td>
+                <td>사업기획/보고서</td>
+                <td>수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;신 :</td>
+                <td>수신처참조</td>
+            </tr>
+            <tr>
+                <td>제 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목 :</td>
+                <td colspan="3">`;
 
         var footer = "</body></html>";
 
@@ -363,12 +379,22 @@
 
         fileDownload.href = source;
 
-        fileDownload.download = 'hi098123file.' + file;
+        fileDownload.download = formattedDate + '_' + document.querySelector('#answer').value.trim() + '.' + file;
 
         fileDownload.click();
 
         document.body.removeChild(fileDownload);
 
+    }
+
+    function fadeIn() {
+        var element = document.getElementById("downBtn");
+        element.style.display = "block";  // 요소를 나타나게 하려면 "display: block;"로 설정
+
+        // opacity 값을 변경하여 페이드인 효과 적용
+        setTimeout(function () {
+            element.style.opacity = 1;
+        }, 10);  // 일부 브라우저에서는 setTimeout을 사용하여 스타일 변경을 딜레이시켜야 효과가 적용될 수 있습니다.
     }
 
 
@@ -377,7 +403,30 @@
         const textareaContent = $(".ql-editor").children().text();
         var formattedContent = textareaContent.replace(/\n/g, "<br>");
         var formattedContent2 = formattedContent.replace(/-/g, "&nbsp&nbsp -");
-        document.getElementById("source-html").value = formattedContent2;
+        var formattedContent3 = formattedContent2.replace("<br><br>", "");
+        var formattedContent4 = formattedContent3.replace("제목:", "");
+        // 바꿀 HTML 코드
+        var replacementHTML = '</td>' +
+            '</tr>' +
+            '</table>' +
+            '</div>' +
+            '<hr style="width: 100%; border: 2px solid black;"><br><br>' +
+            '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
+            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
+            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">배 경</div>' +
+            '</div>';
+        var formattedContent5 = formattedContent4.replace('서론<br>', replacementHTML);
+        replacementHTML = '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
+            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
+            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">본 론</div>' +
+            '</div>';
+        var formattedContent6 = formattedContent5.replace('본론<br>', replacementHTML);
+        replacementHTML = '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
+            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
+            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">결 론</div>' +
+            '</div>';
+        var formattedContent7 = formattedContent6.replace('결론<br>', replacementHTML);
+        document.getElementById("source-html").value = formattedContent7;
         var textval = document.getElementById("source-html").value;
         console.log(textval);
     }
@@ -394,5 +443,8 @@
 <script src="/vendor/libs/quill/quill.js"></script>
 <!-- Page JS -->
 <script src="/js/forms-editors.js"></script>
+
+<!-- html2pdf.js 라이브러리 추가 -->
+<script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
 

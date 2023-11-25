@@ -3,15 +3,110 @@
 <%--JSTL : 통화 날짜를 표현하게 해주는 문법--%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<script src="/pdfjs/pdfmake.min.js"></script>
-<script src="/font/NanumGothic-Regular.ttf"></script>
+
+
 <script src="/pdfjs/bluebird.min.js"></script>
 <script src="/pdfjs/html2canvas.min.js"></script>
 <script src="/pdfjs/jspdf.min.js"></script>
 
+<script src="/pdfjs/docxtemplater.js"></script>
+<script src="/pdfjs/html-docx.js"></script>
+<script src="/pdfjs/mammoth.browser.min.js"></script>
+<script src="/pdfjs/jszip.min.js"></script>
+<script src="/pdfjs/pizzip.min.js"></script>
+
 <script>
 
-    // PDF다운로드
+    // WORD 다운로드
+    function wordPrint() {
+        // Get the content of the div
+        //var divContent = document.getElementById("pdfmakeDiv").outerHTML;
+        var textareaContent = $("#emailEditor").val().replace(/\n/g,'<br>');
+
+        // Get the base64 representation of the image
+        var imgBase64 = getBase64Image(document.getElementById('kbLogoImg'));
+
+        // Append the image tag to the content
+        textareaContent += '<br> <img src="' + imgBase64 + '" />';
+
+        /*    var printFriendlyStyles = `
+      #pdfMakeDiv {
+        width: 800px;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #emailEditor {
+        height: 600px;
+        font-size: 14px;
+      }
+
+      /!* Add more styles as needed *!/
+    `;*/
+
+        // Create a style element for the print-friendly CSS
+        //var style = document.createElement("style");
+        //style.innerHTML = printFriendlyStyles;
+        //document.head.appendChild(style);
+
+        // Convert the textarea content to Word document
+        var converted = htmlDocx.asBlob(textareaContent);
+
+        // Remove the dynamically added style element
+        //document.head.removeChild(style);
+
+
+        // Convert Blob to data URL and log it to the console
+        //var dataUrl = URL.createObjectURL(docx);
+        //console.log("======dataUrl : " + dataUrl);
+
+        // Check Blob content by opening the URL in a new tab
+        //window.open(dataUrl);
+
+        var link = document.createElement("a");
+        link.href = URL.createObjectURL(converted);
+
+
+        // Create a new Date object
+        const today = new Date();
+
+// Get the current year, month, and day
+        const year = today.getFullYear();
+        const getMonth = today.getMonth() + 1; // Months are zero-based, so we add 1
+        const month = getMonth < 10 ? '0'+getMonth : getMonth;
+        const getDay = today.getDate();
+        const day = getDay < 10 ? '0'+getDay : getDay;
+
+// Format the date as a string (YYYY-MM-DD)
+        const formattedDate = year+'-'+month+'-'+day;
+
+        link.download = formattedDate+"_고객 응대 메일.docx";
+        link.click();
+
+        }
+
+    // Function to convert an image to base64
+    function getBase64Image(imgElement) {
+        var canvas = document.createElement("canvas");
+        canvas.width = imgElement.width;
+        canvas.height = imgElement.height;
+
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(imgElement, 0, 0, imgElement.width, imgElement.height);
+
+        var dataURL = canvas.toDataURL("image/png");
+
+        return dataURL;
+    }
+
+
+
+
+    // PDF 다운로드
     function pdfPrint(){
         // 현재 document.body의 html을 A4 크기에 맞춰 PDF로 변환
         //html2canvas(document.body, {
@@ -22,16 +117,18 @@
                 var imgData = canvas.toDataURL('image/png');
 
                 //var imgWidth = 210; // 이미지 가로 길이(mm) A4 기준
-                var imgWidth = 179; // 이미지 가로 길이(mm) A4 기준
+                //var imgWidth = 179; // 이미지 가로 길이(mm) A4 기준
+                var imgWidth = $("#pdfMakeDiv").offsetWidth; // 이미지 가로 길이(mm) A4 기준
                 //var pageHeight = imgWidth * 1.414;  // 출력 페이지 세로 길이 계산 A4 기준
-                var pageHeight = 159;  // 출력 페이지 세로 길이 계산 A4 기준
+                var pageHeight = $("#pdfMakeDiv").offsetHeight; // 출력 페이지 세로 길이 계산 A4 기준
+                //var pageHeight = 159;  // 출력 페이지 세로 길이 계산 A4 기준
                 var imgHeight = canvas.height * imgWidth / canvas.width;
                 var heightLeft = imgHeight;
                 var doc = new jsPDF('p', 'mm');
                 var position = 0;
 
                 // 첫 페이지 출력
-                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, pageHeight);
                 heightLeft -= pageHeight;
 
                 // 한 페이지 이상일 경우 루프 돌면서 출력
@@ -193,6 +290,7 @@
                 if (message.length === 0) return;
                 // 작성 중 표시하기
                 $("#loadingIndicator").removeAttr("hidden");
+                $("#loadingImage").removeAttr("hidden");
                 // 사용자 메시지 화면에 추가
                 //addMessage('나', message);
                 userInput.value = '';
@@ -208,6 +306,7 @@
                     console.error("답변을 받지 못했습니다!",error);
                 } finally {
                     $("#loadingIndicator").attr("hidden", true);
+                    $("#loadingImage").attr("hidden", true);
                 }
 
         });
@@ -266,7 +365,8 @@
 
         $("#pdfmake").click(function () {
             //loadFonts();
-            pdfPrint();
+            //pdfPrint();
+            wordPrint();
         });
 
         $("#sendResponseData").click(function (){
@@ -333,7 +433,7 @@
                         <span class="bs-stepper-number">04</span>
                         <span class="d-flex flex-column gap-1 ms-2">
                           <span class="bs-stepper-title">최종 결과</span>
-                          <span class="bs-stepper-subtitle">PDF파일로 저장하거나, 이메일을 발송합니다.</span>
+                          <span class="bs-stepper-subtitle">파일 저장, 이메일 발송 합니다.</span>
                         </span>
                       </span>
                     </button>
@@ -554,7 +654,9 @@
                     <div id="deal-usage" class="content">
                         <div class="row g-4">
                             <div class="col-sm-12">
-                                <div class="form-floating form-floating-outline">
+                                <div class="form-floating form-floating-outline" stlye="display: flex;
+            align-items: center;
+            justify-content: center;">
                                     <textarea
                                     id="responseData"
                                     name="responseData"
@@ -563,7 +665,11 @@
                                     placeholder=""></textarea>
                                     <label for="responseData"></label>
                                     <label id="loadingIndicator" hidden>답변을 작성하고 있습니다...</label>
-
+                                    <div id="loadingImage" style="width:100%;height:50%;padding-bottom:10%;position:relative;display: flex;align-items: center;justify-content: center;">
+                                       <%-- <iframe src="https://giphy.com/embed/3YJHfSeY06qRFAxE8p" width="80%" height="200vh" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
+                                        </iframe>--%>
+                                        <img src="https://media1.giphy.com/media/3YJHfSeY06qRFAxE8p/giphy.gif" style="position:absolute; width:30%; height:30vh;">
+                                    </div>
                                 </div>
                             </div>
 
@@ -644,10 +750,10 @@
                                                             id="emailEditor"
                                                             name="emailEditor"
                                                             class="form-control"
-                                                            style="height: 600px"
+                                                            style="height: 300px;"
                                                             placeholder="">
                                                     </textarea>
-                                                    <img src="/img/logo/KB.jpg" style="width: 600px;">
+                                                    <img id="kbLogoImg" src="/img/logo/KB.jpg" style="width: 600px;">
                                                 </div>
                                             </div>
                                                <%-- <div class="email-reply-editor" id="emailEditor"></div>--%>
@@ -657,7 +763,7 @@
                                             <div class="d-flex justify-content-end align-items-center">
                                                 <button class="btn btn-primary" id="pdfmake">
                                                     <i class="mdi mdi-export-variant me-1"></i>
-                                                    <span class="d-none d-sm-inline-block">Pdf</span>
+                                                    <span class="d-none d-sm-inline-block">DownLoad</span>
                                                 </button>
                                                 <button class="btn btn-primary">
                                                     <i class="mdi mdi-send-outline me-1"></i>

@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (offcanvasTitle) {
         offcanvasTitle.innerHTML = 'Update Event';
       }
-      btnSubmit.innerHTML = 'Update';
+      btnSubmit.innerHTML = '수정하기';
       btnSubmit.classList.add('btn-update-event');
       btnSubmit.classList.remove('btn-add-event');
       btnDeleteEvent.classList.remove('d-none');

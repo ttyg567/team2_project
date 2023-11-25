@@ -12,7 +12,7 @@
                 <div class="card-body row p-0 pb-3">
                     <!-- 이번 주 현황 -->
                         <div class="col-12 col-md-6 card-separator">
-                            <h3 class="display-6">안녕하세요, <span class="fw-semibold">사용자명</span> 👋🏻</h3>
+                            <h3 class="display-6">안녕하세요, <span class="fw-semibold">김국민 님!</span> 👋🏻</h3>
                             <div class="col-12 col-lg-7">
                                 <p>이번 주 현황</p>
                             </div>
@@ -84,7 +84,7 @@
                     <div class="card h-100">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <h5 class="mb-1">Upcoming Events</h5>
+                                <h5 class="mb-1">다가오는 일정</h5>
                                 <div class="dropdown">
                                     <button
                                             class="btn p-0"
@@ -109,12 +109,12 @@
                                     <span class="timeline-point timeline-point-primary"></span>
                                     <div class="timeline-event">
                                         <div class="timeline-header mb-1">
-                                            <h6 class="mb-2">000 문서 제출 기한</h6>
-                                            <small class="text-muted">11월 17일 18:00</small>
+                                            <h6 class="mb-2">'개발직무 양성 프로젝트 보고서' 제출 기한</h6>
+                                            <small class="text-muted">12월 15일 18:00</small>
                                         </div>
                                         <div class="d-flex">
-                                            <a href="https://www.youtube.com/@pixinvent1515" target="_blank" class="text-truncate">
-                                                <span class="fw-medium">문서 작성함으로 이동</span>
+                                            <a href="/smc/" target="_blank" class="text-truncate">
+                                                <span class="fw-medium">문서 작성하기</span>
                                             </a>
                                         </div>
                                     </div>
@@ -123,10 +123,12 @@
                                     <span class="timeline-point timeline-point-warning"></span>
                                     <div class="timeline-event">
                                         <div class="timeline-header mb-1">
-                                            <h6 class="mb-2"> 예정된 회의가 있습니다. </h6>
-                                            <small class="text-muted">11월 18일 15:00</small>
+                                            <h6 class="mb-2"> 김연아 고객 메일 발송 기한 </h6>
+                                            <small class="text-muted">12월 21일 15:00</small>
                                         </div>
-                                        <p class="mb-2">000 회의가 예정되어 있습니다.</p>
+                                        <a href="/smc/" target="_blank" class="text-truncate">
+                                            <span class="fw-medium">메일 작성하기</span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
@@ -149,11 +151,11 @@
                             <div class="swiper-slide">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h5 class="text-white mb-2">Notice</h5>
+                                        <h5 class="text-white mb-2">공지사항</h5>
                                         <img
                                                 src="/img/products/bannerimg1.png"
                                                 alt="weekly sales"
-                                                width="550"
+                                                width="515"
                                                 />
                                     </div>
                                 </div>
@@ -163,9 +165,9 @@
                                     <div class="col-12">
                                         <h5 class="text-white mb-2">Notice</h5>
                                         <img
-                                                src="/img/products/bannerimg1.png"
+                                                src="/img/products/bannerimg2.png"
                                                 alt="weekly sales"
-                                                width="550"
+                                                width="515"
                                         />
                                     </div>
                                 </div>
@@ -175,9 +177,9 @@
                                     <div class="col-12">
                                         <h5 class="text-white mb-2">Notice</h5>
                                         <img
-                                                src="/img/products/bannerimg1.png"
+                                                src="/img/products/bannerimg3.png"
                                                 alt="weekly sales"
-                                                width="550"
+                                                width="515"
                                         />
                                     </div>
                                 </div>
@@ -195,7 +197,7 @@
                 <div class="col-12 col-xl-8">
                     <div class="card h-100">
                         <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5 class="card-title m-0 me-2">내가 관심 있는 주제</h5>
+                            <h5 class="card-title m-0 me-2">관심 문서</h5>
                             <div class="dropdown">
                                 <button
                                         class="btn p-0"
@@ -221,21 +223,21 @@
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-primary me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">UI Design</p>
+                                            <p class="mb-1">연수</p>
                                             <h5>35%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline my-3">
                                         <span class="text-success me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">Music</p>
+                                            <p class="mb-1">인사</p>
                                             <h5>14%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-danger me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">React</p>
+                                            <p class="mb-1">복지</p>
                                             <h5>10%</h5>
                                         </div>
                                     </div>
@@ -308,7 +310,7 @@
                                                 <img src="/img/avatars/1.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">00000 시행문</h6>
+                                                <h6 class="mb-1 text-truncate">「DIGI Campus」 연수 실시</h6>
                                                 <small class="text-truncate">인재개발부 123</small>
                                             </div>
                                         </div>
@@ -326,7 +328,7 @@
                                                 <img src="/img/avatars/2.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">00000 품의문</h6>
+                                                <h6 class="mb-1 text-truncate">「DIGI Campus」 최종 프로젝트..</h6>
                                                 <small class="text-truncate">인재개발부 122</small>
                                             </div>
                                         </div>
@@ -344,7 +346,7 @@
                                                 <img src="/img/avatars/3.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">00000 안내문</h6>
+                                                <h6 class="mb-1 text-truncate">「DIGI Campus」 연수 대상자 ..</h6>
                                                 <small class="text-truncate">인재개발부 134</small>
                                             </div>
                                         </div>
@@ -362,7 +364,7 @@
                                                 <img src="/img/avatars/4.png" alt="Avatar" class="rounded-circle" />
                                             </div>
                                             <div class="d-flex flex-column">
-                                                <h6 class="mb-1 text-truncate">00000 시행문</h6>
+                                                <h6 class="mb-1 text-truncate">「DIGI Campus」 강의 의뢰</h6>
                                                 <small class="text-truncate">인재개발부 132</small>
                                             </div>
                                         </div>

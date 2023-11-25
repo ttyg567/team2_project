@@ -68,14 +68,12 @@
     <link rel="stylesheet" href="/vendor/libs/quill/editor.css" />
     <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
     <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" />
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/app-calendar.css" />
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css" />
-    <link rel="stylesheet" href="/vendor/css/pages/app-chat.css" />
 
     <!-- Login Page -->
     <link rel="stylesheet" href="/vendor/css/pages/page-auth.css" />
@@ -85,6 +83,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="/js/config.js"></script>
+    <script src="/vendor/js/template-customizer.js"></script>
 
 </head>
 
@@ -92,8 +91,7 @@
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-        <!-- Menu -->
-
+        <!-- 좌측 메뉴 -->
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
                 <a href="/" class="app-brand-link">
@@ -203,24 +201,24 @@
                     </a>
 
                     <ul class="menu-sub">
-                        <li class="menu-item">
+                        <%--<li class="menu-item">
                             <a href="/gptmakeimage" class="menu-link">
                                 <div data-i18n="이미지 만들기">Collapsed menu</div>
                             </a>
-                        </li>
+                        </li>--%>
                         <li class="menu-item">
-                            <a href="/" class="menu-link">
-                                <div data-i18n="계약서 만들기">Content navbar</div>
+                            <a href="/makecontract" class="menu-link">
+                                <div data-i18n="계약서 작성">Content navbar</div>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="/letter" class="menu-link">
-                                <div data-i18n="고객 이메일 작성하기">Content nav + Sidebar</div>
+                                <div data-i18n="고객 메일 작성">Content nav + Sidebar</div>
                             </a>
                         </li>
                         <li class="menu-item">
                             <a href="/smc/" class="menu-link" target="_blank">
-                                <div data-i18n="품의문 작성하기">Horizontal</div>
+                                <div data-i18n="기획서 & 보고서 작성">Horizontal</div>
                             </a>
                         </li>
                     </ul>
@@ -239,40 +237,34 @@
                 <li class="menu-header fw-medium mt-4">
                     <span class="menu-header-text">주요 메뉴 바로가기</span>
                 </li>
-                <li class="menu-item">
+                <%--<li class="menu-item">
                     <a href="/gptmakeimage" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진(이미지생성)">권현진(이미지생성)</div>
+                        <div data-i18n="이미지 생성">이미지 생성</div>
                     </a>
-                </li>
-                <li class="menu-item">
-                    <a href="/app-chat" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="권현진(계약서작성)">권현진(계약서작성)</div>
-                    </a>
-                </li>
+                </li>--%>
                 <li class="menu-item">
                     <a href="/app-calendar" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-                        <div data-i18n="스케쥴관리">스케쥴관리</div>
+                        <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
+                        <div data-i18n="스케쥴 관리">스케쥴 관리</div>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="/makecontract" class="menu-link">
+                        <i class="menu-icon tf-icons mdi mdi-notebook-outline"></i>
+                        <div data-i18n="계약서 작성">계약서 작성</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/letter" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
-                        <div data-i18n="박효선">박효선</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="app-calendar.html" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
-                        <div data-i18n="오지예">오지예</div>
+                        <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+                        <div data-i18n="고객 메일 작성">고객 메일 작성</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="/smc/" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
-                        <div data-i18n="서민철">서민철</div>
+                        <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
+                        <div data-i18n="기획서 & 보고서 작성">기획서 & 보고서 작성</div>
                     </a>
                 </li>
 
@@ -283,7 +275,7 @@
                 </li>
                 <li class="menu-item">
                     <a href="https://pixinvent.ticksy.com/" target="_blank" class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-lifebuoy"></i>
+                        <i class="menu-icon tf-icons mdi mdi-help-circle-outline"></i>
                         <div data-i18n="서비스 지원">서비스 지원</div>
                     </a>
                 </li>
@@ -292,18 +284,20 @@
                             href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/"
                             target="_blank"
                             class="menu-link">
-                        <i class="menu-icon tf-icons mdi mdi-file-document-multiple-outline"></i>
+                        <i class="menu-icon tf-icons mdi mdi-frequently-asked-questions"></i>
                         <div data-i18n="질의 응답">Documentation</div>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <span> </span>
+                </li>
             </ul>
         </aside>
-        <!-- / Menu -->
+        <!-- 좌측 메뉴 끝 -->
 
         <!-- Layout container -->
         <div class="layout-page">
-            <!-- Navbar -->
-
+            <!-- 상단 Navbar -->
             <nav
                     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                     id="layout-navbar">
@@ -479,7 +473,7 @@
                                             <div class="d-flex gap-2">
                                                 <div class="flex-shrink-0">
                                                     <div class="avatar me-1">
-                                                        <img src="/img/avatars/1.png" alt
+                                                        <img src="/img/avatars/2.png" alt
                                                              class="w-px-40 h-auto rounded-circle"/>
                                                     </div>
                                                 </div>
@@ -657,7 +651,7 @@
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle"/>
+                                    <img src="/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle"/>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -666,7 +660,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="/img/avatars/1.png" alt
+                                                    <img src="/img/avatars/2.png" alt
                                                          class="w-px-40 h-auto rounded-circle"/>
                                                 </div>
                                             </div>
@@ -741,8 +735,7 @@
                     <i class="mdi mdi-close search-toggler cursor-pointer"></i>
                 </div>
             </nav>
-
-            <!-- / Navbar -->
+            <!-- 상단 Navbar 끝 -->
 
             <!-- center.jsp -->
             <c:choose>
@@ -784,7 +777,11 @@
 <script src="/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
 <script src="/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
 <script src="/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
-<script src="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+<script src="/vendor/libs/fullcalendar/fullcalendar.js"></script>
+<script src="/vendor/libs/select2/select2.js"></script>
+<script src="/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="/vendor/libs/moment/moment.js"></script>
+
 
 <!-- Main JS -->
 <script src="/js/main.js"></script>
@@ -793,8 +790,6 @@
 <script src="/js/dashboards-analytics.js"></script>
 <script src="/js/app-ecommerce-dashboard.js"></script>
 <script src="/js/pages-auth.js"></script>
-<script src="/js/app-chat.js"></script>
-
 
 </body>
 </html>

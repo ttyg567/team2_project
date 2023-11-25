@@ -65,7 +65,7 @@
 
                 <div class="card-body mt-2">
                     <h4 class="mb-2">Welcome to the Doc! 👋</h4>
-                    <p class="mb-4">Please sign-in to your account</p>
+                    <p class="mb-4"></p>
 
                     <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                         <div class="form-floating form-floating-outline mb-3">

@@ -80,7 +80,6 @@
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
     <!-- Menu -->
-
     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
       <div class="app-brand demo">
         <a href="/" class="app-brand-link">
@@ -190,24 +189,24 @@
           </a>
 
           <ul class="menu-sub">
+            <%--<li class="menu-item">
+                <a href="/gptmakeimage" class="menu-link">
+                    <div data-i18n="이미지 만들기">Collapsed menu</div>
+                </a>
+            </li>--%>
             <li class="menu-item">
-              <a href="/gptmakeimage" class="menu-link">
-                <div data-i18n="이미지 만들기">Collapsed menu</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a href="/" class="menu-link">
-                <div data-i18n="계약서 만들기">Content navbar</div>
+              <a href="/makecontract" class="menu-link">
+                <div data-i18n="계약서 작성">Content navbar</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="/letter" class="menu-link">
-                <div data-i18n="고객 이메일 작성하기">Content nav + Sidebar</div>
+                <div data-i18n="고객 메일 작성">Content nav + Sidebar</div>
               </a>
             </li>
             <li class="menu-item">
               <a href="/smc/" class="menu-link" target="_blank">
-                <div data-i18n="품의문 작성하기">Horizontal</div>
+                <div data-i18n="기획서 & 보고서 작성">Horizontal</div>
               </a>
             </li>
           </ul>
@@ -226,34 +225,34 @@
         <li class="menu-header fw-medium mt-4">
           <span class="menu-header-text">주요 메뉴 바로가기</span>
         </li>
+        <%--<li class="menu-item">
+            <a href="/gptmakeimage" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+                <div data-i18n="이미지 생성">이미지 생성</div>
+            </a>
+        </li>--%>
         <li class="menu-item">
-          <a href="/gptmakeimage" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-            <div data-i18n="권현진(이미지생성)"></div>
+          <a href="/app-calendar" class="menu-link">
+            <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
+            <div data-i18n="스케쥴 관리">스케쥴 관리</div>
           </a>
         </li>
         <li class="menu-item">
-          <a href="app-email.html" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
-            <div data-i18n="권현진(계약서작성)"></div>
+          <a href="/makecontract" class="menu-link">
+            <i class="menu-icon tf-icons mdi mdi-notebook-outline"></i>
+            <div data-i18n="계약서 작성">계약서 작성</div>
           </a>
         </li>
         <li class="menu-item">
           <a href="/letter" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-message-outline"></i>
-            <div data-i18n="박효선">박효선</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="app-calendar.html" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-calendar-blank-outline"></i>
-            <div data-i18n="오지예">오지예</div>
+            <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
+            <div data-i18n="고객 메일 작성">고객 메일 작성</div>
           </a>
         </li>
         <li class="menu-item">
           <a href="/smc/" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-view-grid-outline"></i>
-            <div data-i18n="서민철">서민철</div>
+            <i class="menu-icon tf-icons mdi mdi-file-document-outline"></i>
+            <div data-i18n="기획서 & 보고서 작성">기획서 & 보고서 작성</div>
           </a>
         </li>
 
@@ -264,7 +263,7 @@
         </li>
         <li class="menu-item">
           <a href="https://pixinvent.ticksy.com/" target="_blank" class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-lifebuoy"></i>
+            <i class="menu-icon tf-icons mdi mdi-help-circle-outline"></i>
             <div data-i18n="서비스 지원">서비스 지원</div>
           </a>
         </li>
@@ -273,9 +272,12 @@
                   href="https://demos.pixinvent.com/materialize-html-admin-template/documentation/"
                   target="_blank"
                   class="menu-link">
-            <i class="menu-icon tf-icons mdi mdi-file-document-multiple-outline"></i>
+            <i class="menu-icon tf-icons mdi mdi-frequently-asked-questions"></i>
             <div data-i18n="질의 응답">Documentation</div>
           </a>
+        </li>
+        <li class="menu-item">
+          <span> </span>
         </li>
       </ul>
     </aside>
@@ -460,7 +462,7 @@
                       <div class="d-flex gap-2">
                         <div class="flex-shrink-0">
                           <div class="avatar me-1">
-                            <img src="/img/avatars/1.png" alt
+                            <img src="/img/avatars/2.png" alt
                                  class="w-px-40 h-auto rounded-circle"/>
                           </div>
                         </div>
@@ -638,7 +640,7 @@
               <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                  data-bs-toggle="dropdown">
                 <div class="avatar avatar-online">
-                  <img src="/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle"/>
+                  <img src="/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle"/>
                 </div>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
@@ -647,7 +649,7 @@
                     <div class="d-flex">
                       <div class="flex-shrink-0 me-3">
                         <div class="avatar avatar-online">
-                          <img src="/img/avatars/1.png" alt
+                          <img src="/img/avatars/2.png" alt
                                class="w-px-40 h-auto rounded-circle"/>
                         </div>
                       </div>
@@ -726,6 +728,7 @@
       <!-- / Navbar -->
 
       <!-- center.jsp -->
+
           <jsp:include page="letter.jsp"/>
     </div>
     <!-- / Layout page -->
@@ -775,6 +778,6 @@
 <!-- Page JS -->
 <script src="/js/wizard-ex-create-deal.js"></script>
 <!-- Page JS 20231021 -->
-<script src="/js/app-email.js"></script>
+<%--<script src="/js/app-email.js"></script>--%>
 </body>
 </html>
