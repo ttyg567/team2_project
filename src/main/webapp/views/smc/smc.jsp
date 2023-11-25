@@ -243,6 +243,8 @@
                 typeText(0);
                 //addMessage('챗봇', aiResponse);
 
+                fadeIn();
+
 
             });
             // 사용자 입력 필드에서 Enter 키 이벤트를 처리
