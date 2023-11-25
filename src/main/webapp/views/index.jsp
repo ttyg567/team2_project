@@ -68,12 +68,14 @@
     <link rel="stylesheet" href="/vendor/libs/quill/editor.css" />
     <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
     <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" />
 
     <!-- Page CSS -->
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/app-calendar.css" />
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css" />
+    <link rel="stylesheet" href="/vendor/css/pages/app-chat.css" />
 
     <!-- Login Page -->
     <link rel="stylesheet" href="/vendor/css/pages/page-auth.css" />
@@ -244,7 +246,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="/makecontract" class="menu-link">
+                    <a href="/app-chat" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
                         <div data-i18n="권현진(계약서작성)">권현진(계약서작성)</div>
                     </a>
@@ -782,6 +784,7 @@
 <script src="/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
 <script src="/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
 <script src="/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+<script src="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
 
 <!-- Main JS -->
 <script src="/js/main.js"></script>
@@ -790,6 +793,8 @@
 <script src="/js/dashboards-analytics.js"></script>
 <script src="/js/app-ecommerce-dashboard.js"></script>
 <script src="/js/pages-auth.js"></script>
+<script src="/js/app-chat.js"></script>
+
 
 </body>
 </html>
