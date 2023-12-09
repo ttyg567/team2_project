@@ -69,7 +69,22 @@
 
         var link = document.createElement("a");
         link.href = URL.createObjectURL(converted);
-        link.download = "documentTextarea.docx";
+
+
+        // Create a new Date object
+        const today = new Date();
+
+// Get the current year, month, and day
+        const year = today.getFullYear();
+        const getMonth = today.getMonth() + 1; // Months are zero-based, so we add 1
+        const month = getMonth < 10 ? '0'+getMonth : getMonth;
+        const getDay = today.getDate();
+        const day = getDay < 10 ? '0'+getDay : getDay;
+
+// Format the date as a string (YYYY-MM-DD)
+        const formattedDate = year+'-'+month+'-'+day;
+
+        link.download = formattedDate+"_고객 응대 메일.docx";
         link.click();
 
         }
