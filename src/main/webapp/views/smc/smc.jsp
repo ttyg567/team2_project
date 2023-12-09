@@ -82,11 +82,20 @@
                 <div class="card">
                     <h5 class="card-header" style="display: flex; justify-content: space-between;">
                         <span class="mdi mdi-file-document-edit-outline mdi-36px">생성 및 편집</span>
-                        <button id="downBtn" class="btn btn-primary waves-effect waves-light"
-                                onclick="htmlToFile('doc');" style="display: none;
+                        <div style="display: flex">
+
+                            <button id="imgBtn" class="btn btn-primary waves-effect waves-light"
+                                    onclick="openPopup();" style="display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;">AI이미지
+                            </button>
+                            &nbsp;
+                            <button id="downBtn" class="btn btn-primary waves-effect waves-light"
+                                    onclick="htmlToFile('doc');" style="display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;">다운로드
-                        </button>
+                            </button>
+                        </div>
                     </h5>
                     <div class="card-body">
                         <div id="full-editor">
@@ -289,6 +298,22 @@
 <!-- Content wrapper -->
 
 <script>
+    function openPopup() {
+        // 팝업을 띄울 URL
+        var popupUrl = 'http://127.0.0.1:8088/gptmakeimage';
+
+        // 팝업 창의 너비와 높이
+        var popupWidth = 1000;
+        var popupHeight = 370;
+
+        // 화면의 중앙에 위치하도록 계산
+        var leftPosition = (window.innerWidth - popupWidth) / 2;
+        var topPosition = (window.innerHeight - popupHeight) / 2;
+
+        // window.open을 사용하여 새로운 창 열기
+        window.open(popupUrl, '_blank', 'width=' + popupWidth + ', height=' + popupHeight + ', left=' + leftPosition + ', top=' + topPosition);
+    }
+
     function saveAsPDF() {
         var element = document.getElementById("source-html").value;
         html2pdf(element);
@@ -306,7 +331,7 @@
             "<head><meta charset='utf-8'>" +
             "<style>" +
             "@page { margin: 0.5in; }" + // 여백 설정
-            "body { font-family: Arial, sans-serif; font-size: 12pt; line-height: 1.5; }" + // 기타 스타일
+            "body { font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.5; }" + // 기타 스타일
             `table {
             justify-content: center;
             width: 100%;
@@ -337,15 +362,15 @@
         }` +
             "</style>" +
             "</head><body>" +
-            `<div style="display: flex; justify-content: center;">
-        <p style="text-align: center; background-color: #dcdcdc; color: #333; font-size: 12px; width: auto;">“최고의 인재와 담대한 혁신으로 가장 신뢰받는 평생금융파트너”</p>
+            `<div style="display: flex; justify-content: center; text-align: center;">
+        <span style="text-align: center; background-color: #dcdcdc; color: #333; font-size: 12px; width: auto;">“최고의 인재와 담대한 혁신으로 가장 신뢰받는 평생금융파트너”</span>
     </div>
     <br>
     <div style="display: flex; justify-content: center;">
         <table>
             <tr>
                 <td>문서번호 :</td>
-                <td>인재개발부 146</td>
+                <td>인재개발부 </td>
                 <td>기 안 자 :</td>
                 <td>김국민</td>
             </tr>
@@ -391,9 +416,16 @@
         var element = document.getElementById("downBtn");
         element.style.display = "block";  // 요소를 나타나게 하려면 "display: block;"로 설정
 
+        var element2 = document.getElementById("imgBtn");
+        element2.style.display = "block";  // 요소를 나타나게 하려면 "display: block;"로 설정
+
         // opacity 값을 변경하여 페이드인 효과 적용
         setTimeout(function () {
             element.style.opacity = 1;
+        }, 10);  // 일부 브라우저에서는 setTimeout을 사용하여 스타일 변경을 딜레이시켜야 효과가 적용될 수 있습니다.
+
+        setTimeout(function () {
+            element2.style.opacity = 1;
         }, 10);  // 일부 브라우저에서는 setTimeout을 사용하여 스타일 변경을 딜레이시켜야 효과가 적용될 수 있습니다.
     }
 
@@ -411,19 +443,22 @@
             '</table>' +
             '</div>' +
             '<hr style="width: 100%; border: 2px solid black;"><br><br>' +
-            '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
-            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
-            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">배 경</div>' +
+            '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px;">' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;</span>&nbsp;' +
+            '<span style="padding-left: 10px; font-weight: bold; width: 165px;">배 경</span>' +
             '</div>';
         var formattedContent5 = formattedContent4.replace('서론<br>', replacementHTML);
-        replacementHTML = '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
-            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
-            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">본 론</div>' +
+        replacementHTML = '<br><div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px;">' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;</span>&nbsp;' +
+            '<span style="padding-left: 10px; font-weight: bold; width: 165px;">본 론</span>' +
             '</div>';
         var formattedContent6 = formattedContent5.replace('본론<br>', replacementHTML);
-        replacementHTML = '<div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px; border: solid 1px black;">' +
-            '<div style="background-color: #333; width: 30px; height: 30px;"></div>' +
-            '<div style="padding-left: 10px; font-weight: bold; width: 165px;">결 론</div>' +
+        replacementHTML = '<br><div style="display: flex; height: 30px; width: 200px; align-items: center; margin-bottom: 15px;">' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;' +
+            '<span style="background-color: #333; width: 30px; height: 30px;">&nbsp;</span>&nbsp;' +
+            '<span style="padding-left: 10px; font-weight: bold; width: 165px;">결 론</span>' +
             '</div>';
         var formattedContent7 = formattedContent6.replace('결론<br>', replacementHTML);
         document.getElementById("source-html").value = formattedContent7;
