@@ -223,21 +223,21 @@
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-primary me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">연수</p>
+                                            <p class="mb-1">인사/복지/연수</p>
                                             <h5>35%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline my-3">
                                         <span class="text-success me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">인사</p>
+                                            <p class="mb-1">수신/전자금융</p>
                                             <h5>14%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-danger me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">복지</p>
+                                            <p class="mb-1">투신/신탁/기금</p>
                                             <h5>10%</h5>
                                         </div>
                                     </div>
@@ -247,21 +247,21 @@
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-info me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">UX Design</p>
+                                            <p class="mb-1">가계여신</p>
                                             <h5>20%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline my-3">
                                         <span class="text-secondary me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">Animation</p>
+                                            <p class="mb-1">기업여신</p>
                                             <h5>12%</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-baseline">
                                         <span class="text-warning me-2"><i class="mdi mdi-circle mdi-14px"></i></span>
                                         <div>
-                                            <p class="mb-1">SEO</p>
+                                            <p class="mb-1">기금여신</p>
                                             <h5>9%</h5>
                                         </div>
                                     </div>

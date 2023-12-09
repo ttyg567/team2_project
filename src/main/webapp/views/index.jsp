@@ -69,11 +69,15 @@
     <link rel="stylesheet" href="/vendor/libs/@form-validation/umd/styles/index.min.css" />
     <link rel="stylesheet" href="/vendor/libs/apex-charts/apex-charts.css" />
 
+    <link rel="stylesheet" href="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" />
+
+
     <!-- Page CSS -->
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/cards-analytics.css"/>
     <link rel="stylesheet" href="/vendor/css/pages/app-calendar.css" />
     <link rel="stylesheet" href="/vendor/css/pages/cards-statistics.css" />
+    <link rel="stylesheet" href="/vendor/css/pages/app-chat.css" />
 
     <!-- Login Page -->
     <link rel="stylesheet" href="/vendor/css/pages/page-auth.css" />
@@ -250,7 +254,7 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="/makecontract" class="menu-link">
+                    <a href="/contractMain" class="menu-link">
                         <i class="menu-icon tf-icons mdi mdi-notebook-outline"></i>
                         <div data-i18n="계약서 작성">계약서 작성</div>
                     </a>
@@ -782,6 +786,8 @@
 <script src="/vendor/libs/flatpickr/flatpickr.js"></script>
 <script src="/vendor/libs/moment/moment.js"></script>
 
+<!-- Vendors JS -->
+<script src="/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
 
 <!-- Main JS -->
 <script src="/js/main.js"></script>
@@ -790,6 +796,9 @@
 <script src="/js/dashboards-analytics.js"></script>
 <script src="/js/app-ecommerce-dashboard.js"></script>
 <script src="/js/pages-auth.js"></script>
+
+<script src="/js/app-chat.js"></script>
+
 
 </body>
 </html>

@@ -713,7 +713,7 @@
     pdf.addImage(image2, "PNG", 0, image1.height, image2.width, image2.height);
 
     // PDF 저장
-    pdf.save("edited_images.pdf");
+    pdf.save("표준주택임대차계약서.pdf");
   }
 </script>
 <%--현진라스트 end--%>

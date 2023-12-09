@@ -174,7 +174,7 @@
           enabled: false
         }
       },
-      labels: ['UI Design', 'UX Design', 'Music', 'Animation', 'React', 'SEO'],
+      labels: ['인사/복지/연수', '가계여신', '수신/전자금융', '기업여신', '투신/신탁/기금', '기금여신'],
       series: [
         {
           data: [35, 20, 14, 12, 10, 9]
