@@ -32,9 +32,9 @@ public class MainController {
     }
 
     //계약서 작성 표지화면
-    @RequestMapping("/app-chat")
+    @RequestMapping("/contractMain")
     public String makeContractMain(Model model){
-        model.addAttribute("center", "app-chat");
+        model.addAttribute("center", "contractMain");
         return "index";
     }
 
