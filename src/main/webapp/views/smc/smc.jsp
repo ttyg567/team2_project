@@ -303,8 +303,8 @@
         var popupUrl = 'http://127.0.0.1:8088/gptmakeimage';
 
         // 팝업 창의 너비와 높이
-        var popupWidth = 600;
-        var popupHeight = 400;
+        var popupWidth = 1000;
+        var popupHeight = 370;
 
         // 화면의 중앙에 위치하도록 계산
         var leftPosition = (window.innerWidth - popupWidth) / 2;
