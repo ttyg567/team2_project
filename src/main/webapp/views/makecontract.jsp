@@ -365,15 +365,19 @@
         </div>
 
         <div>
-          <div class="d-grid mt-3">
-            <button class="btn btn-success" id="downloadButton">
-              <span class="me-2">Complete</span>
+          <div class="d-flex mt-3">
+            <button class="btn btn-success flex-grow-1 me-1" id="downloadButton">
+              <span class="me-2">PDF 추출</span>
+              <i class="mdi mdi-arrow-right scaleX-n1-rtl"></i>
+            </button>
+            <button class="btn btn-warning flex-grow-1 ms-1" id="sendingButton">
+              <span class="me-2">e-mail 발송</span>
               <i class="mdi mdi-arrow-right scaleX-n1-rtl"></i>
             </button>
           </div>
 
           <p class="mt-4 pt-2">
-            반영된 출력물을 이미지로 확인한 후, Complete 버튼을 눌러 PDF 파일로 저장하세요.
+            작성한 계약서를 PDF 추출, e-mail 전송할 수 있습니다.
           </p>
         </div>
       </div>
@@ -715,6 +719,12 @@
     // PDF 저장
     pdf.save("표준주택임대차계약서.pdf");
   }
+
+  //메일전송 alert
+  document.getElementById('sendingButton').addEventListener('click', function() {
+    alert('메일전송 완료!');
+  });
+
 </script>
 <%--현진라스트 end--%>
 
