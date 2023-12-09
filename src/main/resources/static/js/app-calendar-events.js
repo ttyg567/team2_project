@@ -103,7 +103,7 @@ let events = [
   {
     id: 9,
     url: '',
-    title: '개발직무 양성 프로젝트 보고서 제출',
+    title: '프로젝트 보고서제출',
     start: date,
     end: date,
     allDay: true,
