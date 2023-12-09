@@ -116,26 +116,26 @@
             <div class="row g-4">
               <div class="col-md-6">
                 <div class="form-floating form-floating-outline">
-                  <input type="text" class="form-control" id="lender" placeholder="임대인 명을 입력하세요"/>
+                  <input type="text" class="form-control" id="lender" placeholder="임대인 명을 입력하세요" value="국민은행 총무부"/>
                   <label for="contract-address1">임대인</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating form-floating-outline">
-                  <input type="text" class="form-control" id="borrower" placeholder="임차인 명을 입력하세요"/>
+                  <input type="text" class="form-control" id="borrower" placeholder="임차인 명을 입력하세요" value="김국민"/>
                   <label for="contract-address2">임차인</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating form-floating-outline">
                   <input type="text" class="form-control" id="contract-address1"
-                         placeholder="서울시 용산구 효창동"/>
+                         placeholder="서울시 용산구 효창동" value="서울시 용산구 효창동"/>
                   <label for="contract-address1">소재지(시/군/구/동)</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-floating form-floating-outline">
-                  <input type="text" class="form-control" id="contract-address2" placeholder="123-4"/>
+                  <input type="text" class="form-control" id="contract-address2" placeholder="123-4" value="231-4"/>
                   <label for="contract-address2">상세 (번지/동-호수)</label>
                 </div>
               </div>
@@ -687,7 +687,7 @@
 
   var textPositions = [
     {x: 350, y: 131},    //건물면적
-    {x: 70, y: 68},     //임대인
+    {x: 66, y: 68},     //임대인
     {x: 190, y: 68}, //임차인
     {x: 80, y: 105}, //소재지
     {x: 180, y: 105}, //상세

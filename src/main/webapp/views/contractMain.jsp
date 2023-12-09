@@ -19,7 +19,7 @@
                     <div
                             class="chat-sidebar-left-user sidebar-header d-flex flex-column justify-content-center align-items-center flex-wrap px-4 pt-5">
                         <div class="avatar avatar-xl avatar-online w-px-75 h-px-75">
-                            <img src="/img/avatars/1.png" alt="Avatar" class="rounded-circle"/>
+                            <img src="/img/avatars/2.png" alt="Avatar" class="rounded-circle"/>
                         </div>
                         <h5 class="mt-3 mb-1">John Doe</h5>
                         <span>UI/UX Designer</span>
@@ -146,7 +146,7 @@
                                     data-target="#app-chat-sidebar-left">
                                 <img
                                         class="user-avatar rounded-circle cursor-pointer"
-                                        src="/img/avatars/1.png"
+                                        src="/img/avatars/2.png"
                                         alt="Avatar"/>
                             </div>
                             <div class="flex-grow-1 input-group input-group-merge rounded-pill">
@@ -414,7 +414,7 @@
                                         </div>
                                         <div class="user-avatar flex-shrink-0 ms-3">
                                             <div class="avatar avatar-sm">
-                                                <img src="/img/avatars/1.png" alt="Avatar" class="rounded-circle"/>
+                                                <img src="/img/avatars/2.png" alt="Avatar" class="rounded-circle"/>
                                             </div>
                                         </div>
                                     </div>
@@ -449,7 +449,7 @@
                                         </div>
                                         <div class="user-avatar flex-shrink-0 ms-3">
                                             <div class="avatar avatar-sm">
-                                                <img src="/img/avatars/1.png" alt="Avatar" class="rounded-circle"/>
+                                                <img src="/img/avatars/2.png" alt="Avatar" class="rounded-circle"/>
                                             </div>
                                         </div>
                                     </div>
