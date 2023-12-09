@@ -15,6 +15,10 @@
 <script src="/pdfjs/jszip.min.js"></script>
 <script src="/pdfjs/pizzip.min.js"></script>
 
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
 <script>
 
     // WORD 다운로드
@@ -102,6 +106,40 @@
 
         return dataURL;
     }
+
+
+    // email 발송
+
+    (function(){
+        emailjs.init('${emailapikey}');
+    })();
+
+    function SendMail(){
+        var params = {
+            email_id : $("#email_id").val(),
+            message : $("#emailEditor").val(),
+            to_name : $("#to_name").val(),
+            from_name : "박효선 대리",
+            subject : $("#subject").val()
+        };
+        emailjs.send("service_yu9gjhn","template_vopt902",params)
+            .then(function (res) {
+                console.log("SUCCESS", res.status, res.text);
+
+                $("#mailForm").hide();
+                $("#beforeAlarm").hide();
+                $("#afterAlarm").show();
+
+            }, function (error){
+                console.log("FAILED", error);
+            })
+    }
+
+ /*   $("#emailSend").click(function (){
+        SendMail();
+    });*/
+
+
 
 
 
@@ -219,6 +257,8 @@
 
     $(document).ready(function (){
 
+            $("#afterAlarm").hide();
+
             // 사용자 입력 필드
             const userInput = document.querySelector('#keyContents');
             // 전송 버튼
@@ -282,7 +322,7 @@
                 const checkboxShortVal =checkboxShort.val();
                 const lengthStyle = checkboxLong.is(":checked") ? checkboxLongVal : checkboxShort.is(":checked") ? checkboxShortVal : '';
                 const messageForm = "본인이 KB국민은행의 은행원 "+empName+"이라고 생각하고,"+message+" 때문에 고객이 불만족스러운 상황에 대해 " +
-                    "사과하는 편지를 "+writingStyle+" 작성스타일로 "+lengthStyle+" 작성해 줘.";
+                    "사과하는 편지를 "+writingStyle+" 작성스타일로 "+lengthStyle+" 작성해 줘. 고객님께 등 받는이와 박효선드림 등 보내는 이가 명시 되는 부분은 빼 줘. ";
 
 
                 console.log( "나의질문 : "+messageForm );
@@ -700,28 +740,39 @@
                         <div class="row g-3">
                             <div class="col-lg-12">
                                 <div class="row">
-                                    <div class="col-6 mb-0">
+                                    <div class="col-6 mb-0" id="beforeAlarm">
                                         <h3>최종 결과입니다! 🚀</h3>
                                         <p>작성된 편지를 PDF로 저장하거나, 이메일로 발송해보세요.</p>
                                     </div>
+                                    <div class="col-6 mb-0" id="afterAlarm">
+                                        <h3> 메일이 발송되었습니다! 🚀</h3>
+                                        <p> 작성된 편지를 이메일로 발송 완료하였습니다. </p>
+                                    </div>
                                     <!-- Email View : Reply mail-->
 <%--                                    <div class="email-reply card col-12 mb-0 mt-4 mx-sm-4 mx-3 border">--%>
-                                        <div class=" card col-12 mb-0 border">
+                                        <div class=" card col-12 mb-0 border" id="mailForm">
                                         <h6 class="card-header border-0"></h6>
                                         <div class="card-body pt-0 px-3">
 
                                             <div class="col-sm-6">
                                                 <div class="form-floating form-floating-outline">
-                                                    <input type="text" class="form-control" id="billings-email" placeholder="john.doe@gmail.com" />
-                                                    <label for="billings-email">받는 사람</label>
+                                                    <input type="text" class="form-control" id="email_id" placeholder="john.doe@gmail.com" />
+                                                    <label for="email_id">받는 주소</label>
                                                 </div>
                                             </div>
                                             <h4 class="card-header border-0"></h4>
 
+                                            <div class="col-sm-6">
+                                                <div class="form-floating form-floating-outline">
+                                                    <input type="text" class="form-control" id="to_name" placeholder="김국민" />
+                                                    <label for="to_name">수신 고객명</label>
+                                                </div>
+                                            </div>
+                                            <h4 class="card-header border-0"></h4>
                                             <div class="col-sm-12">
                                                 <div class="form-floating form-floating-outline">
-                                                    <input type="text" class="form-control" id="title-email" placeholder="안녕하십니까, 고객님" />
-                                                    <label for="title-email">제목</label>
+                                                    <input type="text" class="form-control" id="subject" placeholder="안녕하십니까, 고객님" />
+                                                    <label for="subject">제목</label>
                                                 </div>
                                             </div>
 
@@ -765,7 +816,7 @@
                                                     <i class="mdi mdi-export-variant me-1"></i>
                                                     <span class="d-none d-sm-inline-block">DownLoad</span>
                                                 </button>
-                                                <button class="btn btn-primary">
+                                                <button class="btn btn-primary" id="emailSend" onclick="SendMail()">
                                                     <i class="mdi mdi-send-outline me-1"></i>
                                                     <span class="align-middle">Send</span>
                                                 </button>

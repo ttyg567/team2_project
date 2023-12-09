@@ -14,6 +14,12 @@ public class MainController {
     @Value("${chatgpt.api-key}")
     private String apikey;
 
+
+
+
+    @Value("${YOUR_PUBLIC_KEY}")
+    private String emailapikey;
+
     @RequestMapping("/")
     public String main(Model model) {
         return "index";
@@ -55,6 +61,7 @@ public class MainController {
     @RequestMapping("/letter")
     public String letter(Model model){
         model.addAttribute("apikey",apikey);
+        model.addAttribute("emailapikey",emailapikey);
         return "letter/letterIndex";
     }
 
