@@ -211,7 +211,7 @@
                             </a>
                         </li>--%>
                         <li class="menu-item">
-                            <a href="/makecontract" class="menu-link">
+                            <a href="/contractMain" class="menu-link">
                                 <div data-i18n="계약서 작성">Content navbar</div>
                             </a>
                         </li>
